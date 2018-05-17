@@ -6,7 +6,7 @@ Repo to support research related to college applications.
 **Gathering data**
 
 * `ColAppScrape.do` - Do file that prepares smaller version of `IPEDSDirInfo02to16.dta`.
-* `ColAppScrape.jpynb` - Notebook designed to web scrape paper / pdf undergradute college applicaionts. Uses the list of web domains provided by `ColAppScrape.do`.
+* `ColAppScrape.jpynb` - Notebook designed to web scrape paper / pdf undergradute college applications. Uses the list of web domains provided by `ColAppScrape.do`.
 * `ColEarlyDecScrape.ipynb` - Notebook that provided a prototype for `ColAppScrape.jpynb`.
 
 **Processing data**
