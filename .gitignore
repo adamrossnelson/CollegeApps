@@ -3,5 +3,6 @@
 *.zip
 *.pdf
 *.log
+*.csv
 pdfs/*.pdf
 geckodriver.log
