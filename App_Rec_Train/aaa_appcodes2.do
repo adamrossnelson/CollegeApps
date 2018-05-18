@@ -67,8 +67,6 @@ replace COL_beh18  = 1 if rootdom == "aacc.edu0"
 
 
 
-
-
 replace isApp = 1  if rootdom0 == "aacc.edu"
 replace isApp = 0  if rootdom1 == "aacc.edu"
 replace isApp = .o if rootdom2 == "aacc.edu"

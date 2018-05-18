@@ -17,3 +17,8 @@ Repo to support research related to college applications.
 **Testing data**
 
 * ` ColAppTester.ipynb` - Notebook that applies applies machine learning to predict if a pdf is an undergraduate application for admission.
+
+
+**Subfolder `App_Rec_Train`**
+
+* Scratch space used to prepare training data.
