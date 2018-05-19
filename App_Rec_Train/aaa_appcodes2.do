@@ -48,16 +48,12 @@ gen rootdom = webindx + string(id)
 list in 1/12, sep(0)
 
 gen isApp = .
-gen rootdom0 = ""
-gen rootdom1 = ""
-gen rootdom2 = ""
 gen CRIM_Inf18 = .
 gen HS_beh18 = .
 gen SEX18 = .
 gen COL_beh18 = .
 
-
-replace isApp = 1 if rootdom == "aacc.edu0"
+replace isApp = 1  if rootdom == "aacc.edu0"
 replace isApp = 0  if rootdom == "aacc.edu1"
 replace isApp = .o if rootdom == "aacc.edu2"
 replace CRIM_Inf18 = 1 if rootdom == "aacc.edu0"
@@ -66,1231 +62,1486 @@ replace SEX18      = 0 if rootdom == "aacc.edu0"
 replace COL_beh18  = 1 if rootdom == "aacc.edu0"
 
 
+replace isApp = 1  if rootdom == "aamu.edu0"
+replace isApp = .d if rootdom == "aamu.edu1"
+replace isApp = 0  if rootdom == "aamu.edu2"
+replace CRIM_Inf18 = 1 if rootdom == "aamu.edu0"
+replace HS_beh18   = 0 if rootdom == "aamu.edu0"
+replace SEX18      = 0 if rootdom == "aamu.edu0"
+replace COL_beh18  = 0 if rootdom == "aamu.edu0"
 
-replace isApp = 1  if rootdom0 == "aacc.edu"
-replace isApp = 0  if rootdom1 == "aacc.edu"
-replace isApp = .o if rootdom2 == "aacc.edu"
-replace CRIM_Inf18 = 1 if rootdom0 == "aacc.edu"
-replace HS_beh18   = 0 if rootdom0 == "aacc.edu"
-replace SEX18      = 0 if rootdom0 == "aacc.edu"
-replace COL_beh18  = 1 if rootdom0 == "aacc.edu"
-
-replace isApp = 1  if rootdom0 == "aamu.edu"
-replace isApp = .d if rootdom1 == "aamu.edu"
-replace isApp = 0  if rootdom2 == "aamu.edu"
-replace CRIM_Inf18 = 1 if rootdom0 == "aamu.edu"
-replace HS_beh18   = 0 if rootdom0 == "aamu.edu"
-replace SEX18      = 0 if rootdom0 == "aamu.edu"
-replace COL_beh18  = 0 if rootdom0 == "aamu.edu"
-
-replace isApp = 0  if rootdom0 == "abac.edu"
-replace isApp = 0  if rootdom1 == "abac.edu"
-replace isApp = 0  if rootdom2 == "abac.edu"
-
-replace isApp = 0  if rootdom0 == "adler.edu"
-replace isApp = 0  if rootdom1 == "adler.edu"
-replace isApp = 0  if rootdom2 == "adler.edu"
-
-
-replace isApp = 0  if rootdom0 == "adu.edu"
-replace isApp = 0  if rootdom1 == "adu.edu"
-replace isApp = 0  if rootdom2 == "adu.edu"
-
-replace isApp = .e  if rootdom0 == "agnesscott.edu"
-replace isApp = .o  if rootdom1 == "agnesscott.edu"
-replace isApp = .o  if rootdom2 == "agnesscott.edu"
-
-replace isApp = .o  if rootdom0 == "aic.edu"
-replace isApp = .o  if rootdom1 == "aic.edu"
-replace isApp = 0  if rootdom2 == "aic.edu"
-
-replace isApp = 1  if rootdom0 == "aicusa.edu"
-replace isApp = .o  if rootdom1 == "aicusa.edu"
-replace isApp = 0  if rootdom2 == "aicusa.edu"
-replace CRIM_Inf18 = 1  if rootdom0 == "aicusa.edu"
-replace HS_beh18   = 1  if rootdom0 == "aicusa.edu"
-replace SEX18      = 0  if rootdom0 == "aicusa.edu"
-replace COL_beh18  = 1  if rootdom0 == "aicusa.edu"
-
-replace isApp = 1  if rootdom0 == "alasu.edu"
-replace isApp = 0  if rootdom1 == "alasu.edu"
-replace isApp = 0  if rootdom2 == "alasu.edu"
-replace CRIM_Inf18 = 1  if rootdom0 == "alasu.edu"
-replace HS_beh18   = 0  if rootdom0 == "alasu.edu"
-replace SEX18      = 0  if rootdom0 == "alasu.edu"
-replace COL_beh18  = 0  if rootdom0 == "alasu.edu"
-
-replace isApp = 1  if rootdom0 == "albanytech.edu"
-replace isApp = .o  if rootdom1 == "albanytech.edu"
-replace isApp = .o  if rootdom2 == "albanytech.edu"
-replace CRIM_Inf18 = 0  if rootdom0 == "albanytech.edu"
-replace HS_beh18   = 0  if rootdom0 == "albanytech.edu"
-replace SEX18      = 0  if rootdom0 == "albanytech.edu"
-replace COL_beh18  = .a  if rootdom0 == "albanytech.edu"
-
-replace isApp = .o  if rootdom0 == "albertus.edu"
-replace isApp = 1  if rootdom1 == "albertus.edu"
-replace isApp = 1  if rootdom2 == "albertus.edu"
-replace CRIM_Inf18 = 1  if rootdom0 == "albertus.edu"
-replace HS_beh18   = 1  if rootdom0 == "albertus.edu"
-replace SEX18      = 0  if rootdom0 == "albertus.edu"
-replace COL_beh18  = 1  if rootdom0 == "albertus.edu"
-
-replace isApp = 0  if rootdom0 == "albizu.edu"
-replace isApp = 0  if rootdom1 == "albizu.edu"
-replace isApp = 0  if rootdom2 == "albizu.edu"
-
-replace isApp = .e  if rootdom0 == "alc.edu"
-replace isApp = .e  if rootdom1 == "alc.edu"
-replace isApp = .e  if rootdom2 == "alc.edu"
-
-replace isApp = 1  if rootdom0 == "allegany.edu"
-replace isApp = 0  if rootdom1 == "allegany.edu"
-replace isApp = 0  if rootdom2 == "allegany.edu"
-replace CRIM_Inf18 = 0  if rootdom0 == "allegany.edu"
-replace HS_beh18   = 0  if rootdom0 == "allegany.edu"
-replace SEX18      = 0  if rootdom0 == "allegany.edu"
-replace COL_beh18  = 1  if rootdom0 == "allegany.edu"
-
-replace isApp = 0  if rootdom0 == "allencc.edu"
-replace isApp = 0  if rootdom1 == "allencc.edu"
-replace isApp = .o  if rootdom2 == "allencc.edu"
-
-replace isApp = 0  if rootdom0 == "allencollege.edu"
-replace isApp = 0  if rootdom1 == "allencollege.edu"
-replace isApp = 0  if rootdom2 == "allencollege.edu"
-
-replace isApp = 0  if rootdom0 == "ambs.edu"
-replace isApp = 0  if rootdom1 == "ambs.edu"
-replace isApp = 0  if rootdom2 == "ambs.edu"
-
-replace isApp = .o  if rootdom0 == "amherst.edu"
-replace isApp = 0  if rootdom1 == "amherst.edu"
-replace isApp = 0  if rootdom2 == "amherst.edu"
-
-replace isApp = 0  if rootdom0 == "amridgeuniversity.edu"
-replace isApp = 0  if rootdom1 == "amridgeuniversity.edu"
-//didn't have a rootdom2
-
-replace isApp = 0  if rootdom0 == "ancilla.edu"
-replace isApp = 0  if rootdom1 == "ancilla.edu"
-replace isApp = 0  if rootdom2 == "ancilla.edu"
-
-replace isApp = 1  if rootdom0 == "anderson.edu"
-replace isApp = .o  if rootdom1 == "anderson.edu"
-replace isApp = 0  if rootdom2 == "anderson.edu"
-replace CRIM_Inf18 = 1  if rootdom0 == "anderson.edu"
-replace HS_beh18   = 0  if rootdom0 == "anderson.edu"
-replace SEX18      = 0  if rootdom0 == "anderson.edu"
-replace COL_beh18  = 0  if rootdom0 == "anderson.edu"
-
-replace isApp = .o  if rootdom0 == "andrewcollege.edu"
-replace isApp = 1  if rootdom1 == "andrewcollege.edu"
-//didn't have a rootdom2
-replace CRIM_Inf18 = 1  if rootdom0 == "andrewcollege.edu"
-replace HS_beh18   = 0  if rootdom0 == "andrewcollege.edu"
-replace SEX18      = 0  if rootdom0 == "andrewcollege.edu"
-replace COL_beh18  = 0  if rootdom0 == "andrewcollege.edu"
-
-replace isApp = 1  if rootdom0 == "annamaria.edu"
-replace isApp = .o  if rootdom1 == "annamaria.edu"
-replace isApp = 0  if rootdom2 == "annamaria.edu"
-replace CRIM_Inf18 = 0  if rootdom0 == "annamaria.edu"
-replace HS_beh18   = 0  if rootdom0 == "annamaria.edu"
-replace SEX18      = 0  if rootdom0 == "annamaria.edu"
-replace COL_beh18  = 0  if rootdom0 == "annamaria.edu"
-
-replace isApp = .o  if rootdom0 == "ants.edu"
-replace isApp = 0  if rootdom1 == "ants.edu"
-replace isApp = 0  if rootdom2 == "ants.edu"
-
-replace isApp = 0  if rootdom0 == "arapahoe.edu"
-replace isApp = 0  if rootdom1 == "arapahoe.edu"
-//didn't have a rootdom2
-
-replace isApp = .o  if rootdom0 == "armstrong.edu"
-replace isApp = 0  if rootdom1 == "armstrong.edu"
-replace isApp = .o  if rootdom2 == "armstrong.edu"
-
-replace isApp = 1  if rootdom0 == "asbury.edu"
-replace isApp = .o  if rootdom1 == "asbury.edu"
-replace isApp = .o  if rootdom2 == "asbury.edu"
-replace CRIM_Inf18 = 0  if rootdom0 == "asbury.edu"
-replace HS_beh18   = 0  if rootdom0 == "asbury.edu"
-replace SEX18      = 0  if rootdom0 == "asbury.edu"
-replace COL_beh18  = 0  if rootdom0 == "asbury.edu"
-
-replace isApp = .o  if rootdom0 == "asburyseminary.edu"
-replace isApp = .o  if rootdom1 == "asburyseminary.edu"
-replace isApp = .o  if rootdom2 == "asburyseminary.edu"
-
-replace isApp = 1  if rootdom0 == "ascc.edu"
-replace isApp = 1  if rootdom1 == "ascc.edu"
-replace isApp = 0  if rootdom2 == "ascc.edu"
-replace CRIM_Inf18 = 0  if rootdom0 == "ascc.edu"
-replace HS_beh18   = 0  if rootdom0 == "ascc.edu"
-replace SEX18      = 0  if rootdom0 == "ascc.edu"
-replace COL_beh18  = 0  if rootdom0 == "ascc.edu"
-
-replace isApp = 0  if rootdom0 == "ashland.kctcs.edu"
-replace isApp = 0  if rootdom1 == "ashland.kctcs.edu"
-replace isApp = 0  if rootdom2 == "ashland.kctcs.edu"
-
-replace isApp = .o  if rootdom0 == "Asnuntuk.edu"
-replace isApp = 0  if rootdom1 == "Asnuntuk.edu"
-replace isApp = 0  if rootdom2 == "Asnuntuk.edu"
-
-replace isApp = 0  if rootdom0 == "assumption.edu"
-replace isApp = 0  if rootdom1 == "assumption.edu"
-replace isApp = 0  if rootdom2 == "assumption.edu"
-
-replace isApp = 0  if rootdom0 == "asurams.edu"
-replace isApp = 0  if rootdom1 == "asurams.edu"
-replace isApp = 0  if rootdom2 == "asurams.edu"
-
-
-replace isApp = 1  if rootdom0 == "athens.edu"
-replace isApp = .o  if rootdom1 == "athens.edu"
-replace isApp = 0  if rootdom2 == "athens.edu"
-replace CRIM_Inf18 = 0  if rootdom0 == "athens.edu"
-replace HS_beh18   = 0  if rootdom0 == "athens.edu"
-replace SEX18      = 0  if rootdom0 == "athens.edu"
-replace COL_beh18  = 0  if rootdom0 == "athens.edu"
-
-replace isApp = .o  if rootdom0 == "atlantatech.edu"
-replace isApp = 0  if rootdom1 == "atlantatech.edu"
-replace isApp = 0  if rootdom2 == "atlantatech.edu"
-
-replace isApp = .o  if rootdom0 == "atlantictechnicalcollege.edu"
-replace isApp = .o  if rootdom1 == "atlantictechnicalcollege.edu"
-replace isApp = 0  if rootdom2 == "atlantictechnicalcollege.edu"
-
-replace isApp = 1  if rootdom0 == "atlm.edu"
-replace isApp = 1  if rootdom1 == "atlm.edu"
-replace isApp = 0  if rootdom2 == "atlm.edu"
-replace CRIM_Inf18 = 0  if rootdom0 == "atlm.edu"
-replace HS_beh18   = 0  if rootdom0 == "atlm.edu"
-replace SEX18      = 0  if rootdom0 == "atlm.edu"
-replace COL_beh18  = 0  if rootdom0 == "atlm.edu"
-replace CRIM_Inf18 = 0  if rootdom1 == "atlm.edu"
-replace HS_beh18   = 0  if rootdom1 == "atlm.edu"
-replace SEX18      = 0  if rootdom1 == "atlm.edu"
-replace COL_beh18  = 0  if rootdom1 == "atlm.edu"
-
-replace isApp = 1  if rootdom0 == "auburn.edu"
-replace isApp = 0  if rootdom1 == "auburn.edu"
-replace isApp = 0  if rootdom2 == "auburn.edu"
-replace CRIM_Inf18 = 0  if rootdom0 == "auburn.edu"
-replace HS_beh18   = 0  if rootdom0 == "auburn.edu"
-replace SEX18      = 0  if rootdom0 == "auburn.edu"
-replace COL_beh18  = 0  if rootdom0 == "auburn.edu"
-
-replace isApp = 0  if rootdom0 == "augustana.edu"
-replace isApp = 0  if rootdom1 == "augustana.edu"
-replace isApp = 1  if rootdom2 == "augustana.edu"
-replace CRIM_Inf18 = 0  if rootdom2 == "augustana.edu"
-replace HS_beh18   = 0  if rootdom2 == "augustana.edu"
-replace SEX18      = 0  if rootdom2 == "augustana.edu"
-replace COL_beh18  = 0  if rootdom2 == "augustana.edu"
-
-replace isApp = 1  if rootdom0 == "augustatech.edu"
-replace isApp =.e  if rootdom1 == "augustatech.edu"
-replace isApp = 0  if rootdom2 == "augustatech.edu"
-replace CRIM_Inf18 = 0  if rootdom0 == "augustatech.edu"
-replace HS_beh18   = 0  if rootdom0 == "augustatech.edu"
-replace SEX18      = 0  if rootdom0 == "augustatech.edu"
-replace COL_beh18  = 0  if rootdom0 == "augustatech.edu"
-
-replace isApp = 1  if rootdom0 == "aum.edu"
-replace isApp = 0  if rootdom1 == "aum.edu"
-replace isApp = .o  if rootdom2 == "aum.edu"
-replace CRIM_Inf18 = 0  if rootdom0 == "aum.edu"
-replace HS_beh18   = 0  if rootdom0 == "aum.edu"
-replace SEX18      = 0  if rootdom0 == "aum.edu"
-replace COL_beh18  = 0  if rootdom0 == "aum.edu"
-
-replace isApp = .o  if rootdom0 == "aurora.edu"
-replace isApp = 0  if rootdom1 == "aurora.edu"
-replace isApp = 0  if rootdom2 == "aurora.edu"
-
-replace isApp = 1  if rootdom0 == "bainbridge.edu"
-replace isApp = .o  if rootdom1 == "bainbridge.edu"
-replace isApp = 0  if rootdom2 == "bainbridge.edu"
-replace CRIM_Inf18 = 0  if rootdom0 == "bainbridge.edu"
-replace HS_beh18   = 0  if rootdom0 == "bainbridge.edu"
-replace SEX18      = 0  if rootdom0 == "bainbridge.edu"
-replace COL_beh18  = 0  if rootdom0 == "bainbridge.edu"
-
-replace isApp = .e  if rootdom0 == "bakeru.edu"
-replace isApp = .e  if rootdom1 == "bakeru.edu"
-replace isApp = .e  if rootdom2 == "bakeru.edu"
-
-replace isApp = .o  if rootdom0 == "baptistcollege.edu"
-replace isApp = 0  if rootdom1 == "baptistcollege.edu"
-replace isApp = 0  if rootdom2 == "baptistcollege.edu"
-
-replace isApp = .o  if rootdom0 == "barclaycollege.edu"
-replace isApp = 1  if rootdom1 == "barclaycollege.edu"
-replace isApp = 0  if rootdom2 == "barclaycollege.edu"
-replace CRIM_Inf18 = 0  if rootdom0 == "barclaycollege.edu"
-replace HS_beh18   = 0  if rootdom0 == "barclaycollege.edu"
-replace SEX18      = 0  if rootdom0 == "barclaycollege.edu"
-replace COL_beh18  = 0  if rootdom0 == "barclaycollege.edu"
-
-replace isApp = 1  if rootdom0 == "barry.edu"
-replace isApp = 0  if rootdom1 == "barry.edu"
-// didn't have rootdom2
-replace CRIM_Inf18 = 1  if rootdom0 == "barry.edu"
-replace HS_beh18   = 1  if rootdom0 == "barry.edu"  /// Ask Adam about "have you been disciplined by a student/faculty judicial board for misconduct?"
-replace SEX18      = 0  if rootdom0 == "barry.edu"
-replace COL_beh18  = 1  if rootdom0 == "barry.edu"
-
-replace isApp = .o  if rootdom0 == "bartonccc.edu"
-replace isApp = 0  if rootdom1 == "bartonccc.edu"
-replace isApp = 0  if rootdom2 == "bartonccc.edu"
-
-
-replace isApp = 0  if rootdom0 == "bates.edu"
-replace isApp = 1  if rootdom1 == "bates.edu"
-replace isApp = 0  if rootdom2 == "bates.edu"
-replace CRIM_Inf18 = 0  if rootdom1 == "bates.edu"
-replace HS_beh18   = 0  if rootdom1 == "bates.edu"
-replace SEX18      = 0  if rootdom1 == "bates.edu"
-replace COL_beh18  = 0  if rootdom1 == "bates.edu"
-
-replace isApp = .o  if rootdom0 == "bccc.edu"
-replace isApp = .o  if rootdom1 == "bccc.edu"
-replace isApp = .o  if rootdom2 == "bccc.edu"
-
-replace isApp = 1  if rootdom0 == "bellarmine.edu"
-replace isApp = 0  if rootdom1 == "bellarmine.edu"
-replace isApp = 0  if rootdom2 == "bellarmine.edu"
-replace CRIM_Inf18 = 1  if rootdom0 == "bellarmine.edu"
-replace HS_beh18   = 1  if rootdom0 == "bellarmine.edu"
-replace SEX18      = 0  if rootdom0 == "bellarmine.edu"
-replace COL_beh18  = 1  if rootdom0 == "bellarmine.edu"
-
-replace isApp = __  if rootdom0 == "ben.edu"
-replace isApp = __  if rootdom1 == "ben.edu"
-replace isApp = __  if rootdom2 == "ben.edu"
-replace CRIM_Inf18 = __  if rootdom0 == "ben.edu"
-replace HS_beh18   = __  if rootdom0 == "ben.edu"
-replace SEX18      = __  if rootdom0 == "ben.edu"
-replace COL_beh18  = __  if rootdom0 == "ben.edu"
-
-replace isApp = .o  if rootdom0 == "benedictine.edu"
-replace isApp = .o  if rootdom1 == "benedictine.edu"
-replace isApp = .o  if rootdom2 == "benedictine.edu"
-
-replace isApp = .e  if rootdom0 == "berea.edu"
-replace isApp = .e  if rootdom1 == "berea.edu"
-replace isApp = .e  if rootdom2 == "berea.edu"
-
-replace isApp = .o  if rootdom0 == "berry.edu"
-replace isApp = .o  if rootdom1 == "berry.edu"
-replace isApp = .o  if rootdom2 == "berry.edu"
-
-replace isApp = .o  if rootdom0 == "bethanyseminary.edu"
-replace isApp = 0  if rootdom1 == "bethanyseminary.edu"
-replace isApp = 0  if rootdom2 == "bethanyseminary.edu"
-
-replace isApp = 1  if rootdom0 == "bethelcollege.edu"
-replace isApp = 1  if rootdom1 == "bethelcollege.edu"
-replace isApp = 0  if rootdom2 == "bethelcollege.edu"
-replace CRIM_Inf18 = 1  if rootdom0 == "bethelcollege.edu"
-replace HS_beh18   = 1  if rootdom0 == "bethelcollege.edu"
-replace SEX18      = 0  if rootdom0 == "bethelcollege.edu"
-replace COL_beh18  = 1  if rootdom0 == "bethelcollege.edu"
-replace CRIM_Inf18 = 1  if rootdom1 == "bethelcollege.edu"
-replace HS_beh18   = 1  if rootdom1 == "bethelcollege.edu"
-replace SEX18      = 0  if rootdom1 == "bethelcollege.edu"
-replace COL_beh18  = 1  if rootdom1 == "bethelcollege.edu"
-
-replace isApp = 1  if rootdom0 == "bethelks.edu"
-replace isApp = 0  if rootdom1 == "bethelks.edu"
-replace isApp = 0  if rootdom2 == "bethelks.edu"
-replace CRIM_Inf18 = 1  if rootdom0 == "bethelks.edu"
-replace HS_beh18   = 1  if rootdom0 == "bethelks.edu"
-replace SEX18      = 0  if rootdom0 == "bethelks.edu"
-replace COL_beh18  = 1  if rootdom0 == "bethelks.edu"
-
-replace isApp = .o  if rootdom0 == "beulah.edu"
-replace isApp = 0  if rootdom1 == "beulah.edu"
-replace isApp = 0  if rootdom2 == "beulah.edu"
-
-replace isApp = 1  if rootdom0 == "bhc.edu"
-replace isApp = .o  if rootdom1 ==  "bhc.edu"
-replace isApp = 0  if rootdom2 ==  "bhc.edu"
-replace CRIM_Inf18 = 0  if rootdom0 ==  "bhc.edu"
-replace HS_beh18   = 0  if rootdom0 ==  "bhc.edu"
-replace SEX18      = 0  if rootdom0 ==  "bhc.edu"
-replace COL_beh18  = 0  if rootdom0 == "bhc.edu"
-
-replace isApp = 0  if rootdom0 == "bigsandy.kctcs.edu"
-replace isApp = 0  if rootdom1 == "bigsandy.kctcs.edu"
-replace isApp = 0  if rootdom2 == "bigsandy.kctcs.edu"
-
-replace isApp = 1  if rootdom0 == "bishop.edu"
-replace isApp = .o  if rootdom1 == "bishop.edu"
-replace isApp = 0  if rootdom2 == "bishop.edu"
-replace CRIM_Inf18 = 0  if rootdom0 == "bishop.edu"
-replace HS_beh18   = 0  if rootdom0 == "bishop.edu"
-replace SEX18      = 0  if rootdom0 == "bishop.edu"
-replace COL_beh18  = 0  if rootdom0 == "bishop.edu"
-
-replace isApp = .o  if rootdom0 == "blackburn.edu"
-replace isApp = .o  if rootdom1 == "blackburn.edu"
-replace isApp = 1  if rootdom2 == "blackburn.edu"
-replace CRIM_Inf18 = 1  if rootdom2 == "blackburn.edu"
-replace HS_beh18   = 1  if rootdom2 == "blackburn.edu"
-replace SEX18      = 0  if rootdom2 == "blackburn.edu"
-replace COL_beh18  = 1  if rootdom2 == "blackburn.edu"
-
-replace isApp = 0  if rootdom0 == "bluegrass.edu"
-replace isApp = 0  if rootdom1 == "bluegrass.edu"
-replace isApp = 0  if rootdom2 == "bluegrass.edu"
-
-replace isApp = 0  if rootdom0 == "boisebible.edu"
-replace isApp = 0  if rootdom1 == "boisebible.edu"
-replace isApp = 0  if rootdom2 == "boisebible.edu"
-
-replace isApp = .o  if rootdom0 == "boisestate.edu"
-replace isApp = .o  if rootdom1 == "boisestate.edu"
-replace isApp = .o  if rootdom2 == "boisestate.edu"
-
-replace isApp = 0  if rootdom0 == "bowdoin.edu"
-replace isApp = 0  if rootdom1 == "bowdoin.edu"
-replace isApp = 0  if rootdom2 == "bowdoin.edu"
-
-
-replace isApp = .o  if rootdom0 == "bowiestate.edu"
-replace isApp = .o  if rootdom1 == "bowiestate.edu"
-replace isApp = .o  if rootdom2 == "bowiestate.edu"
-
-replace isApp = 0  if rootdom0 == "bpc.edu"
-replace isApp = 0  if rootdom1 == "bpc.edu"
-replace isApp = 0  if rootdom2 == "bpc.edu"
-
-replace isApp = 1  if rootdom0 == "bpcc.edu"
-replace isApp = 0  if rootdom1 == "bpcc.edu"
-replace isApp = 0  if rootdom2 == "bpcc.edu"
-replace CRIM_Inf18 = 0  if rootdom0 == "bpcc.edu"
-replace HS_beh18   = 0  if rootdom0 == "bpcc.edu"
-replace SEX18      = 0  if rootdom0 == "bpcc.edu"
-replace COL_beh18  = 1  if rootdom0 == "bpcc.edu"
-
-replace isApp = 1  if rootdom0 == "bradley.edu"
-replace isApp = .o  if rootdom1 == "bradley.edu"
-replace isApp = 1  if rootdom2 == "bradley.edu"
-replace CRIM_Inf18 = 1  if rootdom0 == "bradley.edu"
-replace HS_beh18   = 1  if rootdom0 == "bradley.edu"
-replace SEX18      = 0  if rootdom0 == "bradley.edu"
-replace COL_beh18  = 1  if rootdom0 == "bradley.edu"
-replace CRIM_Inf18 = 1  if rootdom2 == "bradley.edu"
-replace HS_beh18   = 1  if rootdom2 == "bradley.edu"
-replace SEX18      = 0  if rootdom2 == "bradley.edu"
-replace COL_beh18  = 1  if rootdom2 == "bradley.edu"
-
-
-replace isApp = 0  if rootdom0 == "brcn.edu"
-replace isApp = 0  if rootdom1 == "brcn.edu"
-replace isApp = 0  if rootdom2 == "brcn.edu"
-
-replace isApp = .e  if rootdom0 == "brenau.edu"
-replace isApp = .o  if rootdom1 == "brenau.edu"
-replace isApp = 0  if rootdom2 == "brenau.edu"
-
-replace isApp = 0  if rootdom0 == "brescia.edu"
-replace isApp = 0  if rootdom1 == "brescia.edu"
-replace isApp = .o  if rootdom2 == "brescia.edu"
-
-
-replace isApp = 0  if rootdom0 == "briarcliff.edu"
-replace isApp = 0  if rootdom1 == "briarcliff.edu"
-replace isApp = 0  if rootdom2 == "briarcliff.edu"
-
-
-replace isApp = .o  if rootdom0 == "bridgeport.edu"
-replace isApp = 1  if rootdom1 == "bridgeport.edu"
-//Missing rootdom2
-replace CRIM_Inf18 = 1  if rootdom1 == "bridgeport.edu"
-replace HS_beh18   = 1  if rootdom1 == "bridgeport.edu"
-replace SEX18      = 0  if rootdom1 == "bridgeport.edu"
-replace COL_beh18  = 1  if rootdom1 == "bridgeport.edu"
-
-replace isApp = 0  if rootdom0 == "broward.edu"
-replace isApp = 0  if rootdom1 == "broward.edu"
-replace isApp = 0  if rootdom2 == "broward.edu"
-
-
-replace isApp = 1  if rootdom0 == "bsc.edu"
-replace isApp = 0  if rootdom1 == "bsc.edu"
-replace isApp = 0  if rootdom2 == "bsc.edu"
-replace CRIM_Inf18 = 0  if rootdom0 == "bsc.edu"
-replace HS_beh18   = 1  if rootdom0 == "bsc.edu"
-replace SEX18      = 0  if rootdom0 == "bsc.edu"
-replace COL_beh18  = 1  if rootdom0 == "bsc.edu"
-
-replace isApp = 0  if rootdom0 == "bsu.edu"
-replace isApp = .e  if rootdom1 == "bsu.edu"
-replace isApp = .e  if rootdom2 == "bsu.edu"
-
-
-replace isApp = 0  if rootdom0 == "butc.edu"
+
+replace isApp = 0  if rootdom == "abac.edu0"
+replace isApp = 0  if rootdom == "abac.edu1"
+replace isApp = 0  if rootdom == "abac.edu2"
+
+
+replace isApp = 0  if rootdom == "adler.edu0"
+replace isApp = 0  if rootdom == "adler.edu1"
+replace isApp = 0  if rootdom == "adler.edu2"
+
+
+
+
+replace isApp = 0  if rootdom == "adu.edu0"
+replace isApp = 0  if rootdom == "adu.edu1"
+replace isApp = 0  if rootdom == "adu.edu2"
+
+
+replace isApp = .e  if rootdom == "agnesscott.edu0"
+replace isApp = .o  if rootdom == "agnesscott.edu1"
+replace isApp = .o  if rootdom == "agnesscott.edu2"
+
+
+replace isApp = .o  if rootdom == "aic.edu0"
+replace isApp = .o  if rootdom == "aic.edu1"
+replace isApp = 0  if rootdom == "aic.edu2"
+
+
+replace isApp = 1  if rootdom == "aicusa.edu0"
+replace isApp = .o  if rootdom == "aicusa.edu1"
+replace isApp = 0  if rootdom == "aicusa.edu2"
+replace CRIM_Inf18 = 1  if rootdom == "aicusa.edu0"
+replace HS_beh18   = 1  if rootdom == "aicusa.edu0"
+replace SEX18      = 0  if rootdom == "aicusa.edu0"
+replace COL_beh18  = 1  if rootdom == "aicusa.edu0"
+
+
+replace isApp = 1  if rootdom == "alasu.edu0"
+replace isApp = 0  if rootdom == "alasu.edu1"
+replace isApp = 0  if rootdom == "alasu.edu2"
+replace CRIM_Inf18 = 1  if rootdom == "alasu.edu0"
+replace HS_beh18   = 0  if rootdom == "alasu.edu0"
+replace SEX18      = 0  if rootdom == "alasu.edu0"
+replace COL_beh18  = 0  if rootdom == "alasu.edu0"
+
+
+replace isApp = 1  if rootdom == "albanytech.edu0"
+replace isApp = .o  if rootdom == "albanytech.edu1"
+replace isApp = .o  if rootdom == "albanytech.edu2"
+replace CRIM_Inf18 = 0  if rootdom == "albanytech.edu0"
+replace HS_beh18   = 0  if rootdom == "albanytech.edu0"
+replace SEX18      = 0  if rootdom == "albanytech.edu0"
+replace COL_beh18  = .a  if rootdom == "albanytech.edu0"
+
+
+replace isApp = .o  if rootdom == "albertus.edu0"
+replace isApp = 1  if rootdom == "albertus.edu1"
+replace isApp = 1  if rootdom == "albertus.edu2"
+replace CRIM_Inf18 = 1  if rootdom == "albertus.edu0"
+replace HS_beh18   = 1  if rootdom == "albertus.edu0"
+replace SEX18      = 0  if rootdom == "albertus.edu0"
+replace COL_beh18  = 1  if rootdom == "albertus.edu0"
+
+
+replace isApp = 0  if rootdom == "albizu.edu0"
+replace isApp = 0  if rootdom == "albizu.edu1"
+replace isApp = 0  if rootdom == "albizu.edu2"
+
+
+replace isApp = .e  if rootdom == "alc.edu0"
+replace isApp = .e  if rootdom == "alc.edu1"
+replace isApp = .e  if rootdom == "alc.edu2"
+
+
+replace isApp = 1  if rootdom == "allegany.edu0"
+replace isApp = 0  if rootdom == "allegany.edu1"
+replace isApp = 0  if rootdom == "allegany.edu2"
+replace CRIM_Inf18 = 0  if rootdom == "allegany.edu0"
+replace HS_beh18   = 0  if rootdom == "allegany.edu0"
+replace SEX18      = 0  if rootdom == "allegany.edu0"
+replace COL_beh18  = 1  if rootdom == "allegany.edu0"
+
+
+replace isApp = 0  if rootdom == "allencc.edu0"
+replace isApp = 0  if rootdom == "allencc.edu1"
+replace isApp = .o  if rootdom == "allencc.edu2"
+
+
+replace isApp = 0  if rootdom == "allencollege.edu0"
+replace isApp = 0  if rootdom == "allencollege.edu1"
+replace isApp = 0  if rootdom == "allencollege.edu2"
+
+
+replace isApp = 0  if rootdom == "ambs.edu0"
+replace isApp = 0  if rootdom == "ambs.edu1"
+replace isApp = 0  if rootdom == "ambs.edu2"
+
+
+replace isApp = .o  if rootdom == "amherst.edu0"
+replace isApp = 0  if rootdom == "amherst.edu1"
+replace isApp = 0  if rootdom == "amherst.edu2"
+
+
+replace isApp = 0  if rootdom == "amridgeuniversity.edu0"
+replace isApp = 0  if rootdom == "amridgeuniversity.edu1"
+//didn't have a rootdom2"
+
+
+replace isApp = 0  if rootdom == "ancilla.edu0"
+replace isApp = 0  if rootdom == "ancilla.edu1"
+replace isApp = 0  if rootdom == "ancilla.edu2"
+
+
+replace isApp = 1  if rootdom == "anderson.edu0"
+replace isApp = .o  if rootdom == "anderson.edu1"
+replace isApp = 0  if rootdom == "anderson.edu2"
+replace CRIM_Inf18 = 1  if rootdom == "anderson.edu0"
+replace HS_beh18   = 0  if rootdom == "anderson.edu0"
+replace SEX18      = 0  if rootdom == "anderson.edu0"
+replace COL_beh18  = 0  if rootdom == "anderson.edu0"
+
+
+replace isApp = .o  if rootdom == "andrewcollege.edu0"
+replace isApp = 1  if rootdom == "andrewcollege.edu1"
+//didn't have a rootdom2"
+replace CRIM_Inf18 = 1  if rootdom == "andrewcollege.edu0"
+replace HS_beh18   = 0  if rootdom == "andrewcollege.edu0"
+replace SEX18      = 0  if rootdom == "andrewcollege.edu0"
+replace COL_beh18  = 0  if rootdom == "andrewcollege.edu0"
+
+
+replace isApp = 1  if rootdom == "annamaria.edu0"
+replace isApp = .o  if rootdom == "annamaria.edu1"
+replace isApp = 0  if rootdom == "annamaria.edu2"
+replace CRIM_Inf18 = 0  if rootdom == "annamaria.edu0"
+replace HS_beh18   = 0  if rootdom == "annamaria.edu0"
+replace SEX18      = 0  if rootdom == "annamaria.edu0"
+replace COL_beh18  = 0  if rootdom == "annamaria.edu0"
+
+
+replace isApp = .o  if rootdom == "ants.edu0"
+replace isApp = 0  if rootdom == "ants.edu1"
+replace isApp = 0  if rootdom == "ants.edu2"
+
+
+replace isApp = 0  if rootdom == "arapahoe.edu0"
+replace isApp = 0  if rootdom == "arapahoe.edu1"
+//didn't have a rootdom2"
+
+
+replace isApp = .o  if rootdom == "armstrong.edu0"
+replace isApp = 0  if rootdom == "armstrong.edu1"
+replace isApp = .o  if rootdom == "armstrong.edu2"
+
+
+replace isApp = 1  if rootdom == "asbury.edu0"
+replace isApp = .o  if rootdom == "asbury.edu1"
+replace isApp = .o  if rootdom == "asbury.edu2"
+replace CRIM_Inf18 = 0  if rootdom == "asbury.edu0"
+replace HS_beh18   = 0  if rootdom == "asbury.edu0"
+replace SEX18      = 0  if rootdom == "asbury.edu0"
+replace COL_beh18  = 0  if rootdom == "asbury.edu0"
+
+
+replace isApp = .o  if rootdom == "asburyseminary.edu0"
+replace isApp = .o  if rootdom == "asburyseminary.edu1"
+replace isApp = .o  if rootdom == "asburyseminary.edu2"
+
+
+replace isApp = 1  if rootdom == "ascc.edu0"
+replace isApp = 1  if rootdom == "ascc.edu1"
+replace isApp = 0  if rootdom == "ascc.edu2"
+replace CRIM_Inf18 = 0  if rootdom == "ascc.edu0"
+replace HS_beh18   = 0  if rootdom == "ascc.edu0"
+replace SEX18      = 0  if rootdom == "ascc.edu0"
+replace COL_beh18  = 0  if rootdom == "ascc.edu0"
+
+
+replace isApp = 0  if rootdom == "ashland.kctcs.edu0"
+replace isApp = 0  if rootdom == "ashland.kctcs.edu1"
+replace isApp = 0  if rootdom == "ashland.kctcs.edu2"
+
+
+replace isApp = .o  if rootdom == "Asnuntuk.edu0"
+replace isApp = 0  if rootdom == "Asnuntuk.edu1"
+replace isApp = 0  if rootdom == "Asnuntuk.edu2"
+
+
+replace isApp = 0  if rootdom == "assumption.edu0"
+replace isApp = 0  if rootdom == "assumption.edu1"
+replace isApp = 0  if rootdom == "assumption.edu2"
+
+
+replace isApp = 0  if rootdom == "asurams.edu0"
+replace isApp = 0  if rootdom == "asurams.edu1"
+replace isApp = 0  if rootdom == "asurams.edu2"
+
+
+
+
+replace isApp = 1  if rootdom == "athens.edu0"
+replace isApp = .o  if rootdom == "athens.edu1"
+replace isApp = 0  if rootdom == "athens.edu2"
+replace CRIM_Inf18 = 0  if rootdom == "athens.edu0"
+replace HS_beh18   = 0  if rootdom == "athens.edu0"
+replace SEX18      = 0  if rootdom == "athens.edu0"
+replace COL_beh18  = 0  if rootdom == "athens.edu0"
+
+
+replace isApp = .o  if rootdom == "atlantatech.edu0"
+replace isApp = 0  if rootdom == "atlantatech.edu1"
+replace isApp = 0  if rootdom == "atlantatech.edu2"
+
+
+replace isApp = .o  if rootdom == "atlantictechnicalcollege.edu0"
+replace isApp = .o  if rootdom == "atlantictechnicalcollege.edu1"
+replace isApp = 0  if rootdom == "atlantictechnicalcollege.edu2"
+
+
+replace isApp = 1  if rootdom == "atlm.edu0"
+replace isApp = 1  if rootdom == "atlm.edu1"
+replace isApp = 0  if rootdom == "atlm.edu2"
+replace CRIM_Inf18 = 0  if rootdom == "atlm.edu0"
+replace HS_beh18   = 0  if rootdom == "atlm.edu0"
+replace SEX18      = 0  if rootdom == "atlm.edu0"
+replace COL_beh18  = 0  if rootdom == "atlm.edu0"
+replace CRIM_Inf18 = 0  if rootdom == "atlm.edu1"
+replace HS_beh18   = 0  if rootdom == "atlm.edu1"
+replace SEX18      = 0  if rootdom == "atlm.edu1"
+replace COL_beh18  = 0  if rootdom == "atlm.edu1"
+
+
+replace isApp = 1  if rootdom == "auburn.edu0"
+replace isApp = 0  if rootdom == "auburn.edu1"
+replace isApp = 0  if rootdom == "auburn.edu2"
+replace CRIM_Inf18 = 0  if rootdom == "auburn.edu0"
+replace HS_beh18   = 0  if rootdom == "auburn.edu0"
+replace SEX18      = 0  if rootdom == "auburn.edu0"
+replace COL_beh18  = 0  if rootdom == "auburn.edu0"
+
+
+replace isApp = 0  if rootdom == "augustana.edu0"
+replace isApp = 0  if rootdom == "augustana.edu1"
+replace isApp = 0  if rootdom == "augustana.edu2"
+replace CRIM_Inf18 = 0  if rootdom == "augustana.edu2"
+replace HS_beh18   = 0  if rootdom == "augustana.edu2"
+replace SEX18      = 0  if rootdom == "augustana.edu2"
+replace COL_beh18  = 0  if rootdom == "augustana.edu2"
+
+
+replace isApp = 1  if rootdom == "augustatech.edu0"
+replace isApp =.e  if rootdom == "augustatech.edu1"
+replace isApp = 0  if rootdom == "augustatech.edu2"
+replace CRIM_Inf18 = 0  if rootdom == "augustatech.edu0"
+replace HS_beh18   = 0  if rootdom == "augustatech.edu0"
+replace SEX18      = 0  if rootdom == "augustatech.edu0"
+replace COL_beh18  = 0  if rootdom == "augustatech.edu0"
+
+
+replace isApp = 1  if rootdom == "aum.edu0"
+replace isApp = 0  if rootdom == "aum.edu1"
+replace isApp = .o  if rootdom == "aum.edu2"
+replace CRIM_Inf18 = 0  if rootdom == "aum.edu0"
+replace HS_beh18   = 0  if rootdom == "aum.edu0"
+replace SEX18      = 0  if rootdom == "aum.edu0"
+replace COL_beh18  = 0  if rootdom == "aum.edu0"
+
+
+replace isApp = .o  if rootdom == "aurora.edu0"
+replace isApp = 0  if rootdom == "aurora.edu1"
+replace isApp = 0  if rootdom == "aurora.edu2"
+
+
+replace isApp = 1  if rootdom == "bainbridge.edu0"
+replace isApp = .o  if rootdom == "bainbridge.edu1"
+replace isApp = 0  if rootdom == "bainbridge.edu2"
+replace CRIM_Inf18 = 0  if rootdom == "bainbridge.edu0"
+replace HS_beh18   = 0  if rootdom == "bainbridge.edu0"
+replace SEX18      = 0  if rootdom == "bainbridge.edu0"
+replace COL_beh18  = 0  if rootdom == "bainbridge.edu0"
+
+
+replace isApp = .e  if rootdom == "bakeru.edu0"
+replace isApp = .e  if rootdom == "bakeru.edu1"
+replace isApp = .e  if rootdom == "bakeru.edu2"
+
+
+replace isApp = .o  if rootdom == "baptistcollege.edu0"
+replace isApp = 0  if rootdom == "baptistcollege.edu1"
+replace isApp = 0  if rootdom == "baptistcollege.edu2"
+
+
+replace isApp = .o  if rootdom == "barclaycollege.edu0"
+replace isApp = 1  if rootdom == "barclaycollege.edu1"
+replace isApp = 0  if rootdom == "barclaycollege.edu2"
+replace CRIM_Inf18 = 0  if rootdom == "barclaycollege.edu0"
+replace HS_beh18   = 0  if rootdom == "barclaycollege.edu0"
+replace SEX18      = 0  if rootdom == "barclaycollege.edu0"
+replace COL_beh18  = 0  if rootdom == "barclaycollege.edu0"
+
+
+replace isApp = 1  if rootdom == "barry.edu0"
+replace isApp = 0  if rootdom == "barry.edu1"
+// didn't have rootdom2"
+replace CRIM_Inf18 = 1  if rootdom == "barry.edu0"
+replace HS_beh18   = 1  if rootdom == "barry.edu"  // Ask Adam about "have you been disciplined by a student/faculty judicial board for misconduct?0"
+replace SEX18      = 0  if rootdom == "barry.edu0"
+replace COL_beh18  = 1  if rootdom == "barry.edu0"
+
+
+replace isApp = .o  if rootdom == "bartonccc.edu0"
+replace isApp = 0  if rootdom == "bartonccc.edu1"
+replace isApp = 0  if rootdom == "bartonccc.edu2"
+
+
+
+
+replace isApp = 0  if rootdom == "bates.edu0"
+replace isApp = 1  if rootdom == "bates.edu1"
+replace isApp = 0  if rootdom == "bates.edu2"
+replace CRIM_Inf18 = 0  if rootdom == "bates.edu1"
+replace HS_beh18   = 0  if rootdom == "bates.edu1"
+replace SEX18      = 0  if rootdom == "bates.edu1"
+replace COL_beh18  = 0  if rootdom == "bates.edu1"
+
+
+replace isApp = .o  if rootdom == "bccc.edu0"
+replace isApp = .o  if rootdom == "bccc.edu1"
+replace isApp = .o  if rootdom == "bccc.edu2"
+
+
+replace isApp = 1  if rootdom == "bellarmine.edu0"
+replace isApp = 0  if rootdom == "bellarmine.edu1"
+replace isApp = 0  if rootdom == "bellarmine.edu2"
+replace CRIM_Inf18 = 1  if rootdom == "bellarmine.edu0"
+replace HS_beh18   = 1  if rootdom == "bellarmine.edu0"
+replace SEX18      = 0  if rootdom == "bellarmine.edu0"
+replace COL_beh18  = 1  if rootdom == "bellarmine.edu0"
+
+/*
+replace isApp = __  if rootdom == "ben.edu0"
+replace isApp = __  if rootdom == "ben.edu1"
+replace isApp = __  if rootdom == "ben.edu2"
+replace CRIM_Inf18 = __  if rootdom == "ben.edu0"
+replace HS_beh18   = __  if rootdom == "ben.edu0"
+replace SEX18      = __  if rootdom == "ben.edu0"
+replace COL_beh18  = __  if rootdom == "ben.edu0" */
+
+
+replace isApp = .o  if rootdom == "benedictine.edu0"
+replace isApp = .o  if rootdom == "benedictine.edu1"
+replace isApp = .o  if rootdom == "benedictine.edu2"
+
+
+replace isApp = .e  if rootdom == "berea.edu0"
+replace isApp = .e  if rootdom == "berea.edu1"
+replace isApp = .e  if rootdom == "berea.edu2"
+
+
+replace isApp = .o  if rootdom == "berry.edu0"
+replace isApp = .o  if rootdom == "berry.edu1"
+replace isApp = .o  if rootdom == "berry.edu2"
+
+
+replace isApp = .o  if rootdom == "bethanyseminary.edu0"
+replace isApp = 0  if rootdom == "bethanyseminary.edu1"
+replace isApp = 0  if rootdom == "bethanyseminary.edu2"
+
+
+replace isApp = 1  if rootdom == "bethelcollege.edu0"
+replace isApp = 1  if rootdom == "bethelcollege.edu1"
+replace isApp = 0  if rootdom == "bethelcollege.edu2"
+replace CRIM_Inf18 = 1  if rootdom == "bethelcollege.edu0"
+replace HS_beh18   = 1  if rootdom == "bethelcollege.edu0"
+replace SEX18      = 0  if rootdom == "bethelcollege.edu0"
+replace COL_beh18  = 1  if rootdom == "bethelcollege.edu0"
+replace CRIM_Inf18 = 1  if rootdom == "bethelcollege.edu1"
+replace HS_beh18   = 1  if rootdom == "bethelcollege.edu1"
+replace SEX18      = 0  if rootdom == "bethelcollege.edu1"
+replace COL_beh18  = 1  if rootdom == "bethelcollege.edu1"
+
+
+replace isApp = 1  if rootdom == "bethelks.edu0"
+replace isApp = 0  if rootdom == "bethelks.edu1"
+replace isApp = 0  if rootdom == "bethelks.edu2"
+replace CRIM_Inf18 = 1  if rootdom == "bethelks.edu0"
+replace HS_beh18   = 1  if rootdom == "bethelks.edu0"
+replace SEX18      = 0  if rootdom == "bethelks.edu0"
+replace COL_beh18  = 1  if rootdom == "bethelks.edu0"
+
+
+replace isApp = .o  if rootdom == "beulah.edu0"
+replace isApp = 0  if rootdom == "beulah.edu1"
+replace isApp = 0  if rootdom == "beulah.edu2"
+
+
+replace isApp = 1  if rootdom == "bhc.edu0"
+replace isApp = .o  if rootdom ==  "bhc.edu1"
+replace isApp = 0  if rootdom ==  "bhc.edu2"
+replace CRIM_Inf18 = 0  if rootdom ==  "bhc.edu0"
+replace HS_beh18   = 0  if rootdom ==  "bhc.edu0"
+replace SEX18      = 0  if rootdom ==  "bhc.edu0"
+replace COL_beh18  = 0  if rootdom == "bhc.edu0"
+
+
+replace isApp = 0  if rootdom == "bigsandy.kctcs.edu0"
+replace isApp = 0  if rootdom == "bigsandy.kctcs.edu1"
+replace isApp = 0  if rootdom == "bigsandy.kctcs.edu2"
+
+
+replace isApp = 1  if rootdom == "bishop.edu0"
+replace isApp = .o  if rootdom == "bishop.edu1"
+replace isApp = 0  if rootdom == "bishop.edu2"
+replace CRIM_Inf18 = 0  if rootdom == "bishop.edu0"
+replace HS_beh18   = 0  if rootdom == "bishop.edu0"
+replace SEX18      = 0  if rootdom == "bishop.edu0"
+replace COL_beh18  = 0  if rootdom == "bishop.edu0"
+
+
+replace isApp = .o  if rootdom == "blackburn.edu0"
+replace isApp = .o  if rootdom == "blackburn.edu1"
+replace isApp = 1  if rootdom == "blackburn.edu2"
+replace CRIM_Inf18 = 1  if rootdom == "blackburn.edu2"
+replace HS_beh18   = 1  if rootdom == "blackburn.edu2"
+replace SEX18      = 0  if rootdom == "blackburn.edu2"
+replace COL_beh18  = 1  if rootdom == "blackburn.edu2"
+
+
+replace isApp = 0  if rootdom == "bluegrass.edu0"
+replace isApp = 0  if rootdom == "bluegrass.edu1"
+replace isApp = 0  if rootdom == "bluegrass.edu2"
+
+
+replace isApp = 0  if rootdom == "boisebible.edu0"
+replace isApp = 0  if rootdom == "boisebible.edu1"
+replace isApp = 0  if rootdom == "boisebible.edu2"
+
+
+replace isApp = .o  if rootdom == "boisestate.edu0"
+replace isApp = .o  if rootdom == "boisestate.edu1"
+replace isApp = .o  if rootdom == "boisestate.edu2"
+
+
+replace isApp = 0  if rootdom == "bowdoin.edu0"
+replace isApp = 0  if rootdom == "bowdoin.edu1"
+replace isApp = 0  if rootdom == "bowdoin.edu2"
+
+
+
+
+replace isApp = .o  if rootdom == "bowiestate.edu0"
+replace isApp = .o  if rootdom == "bowiestate.edu1"
+replace isApp = .o  if rootdom == "bowiestate.edu2"
+
+
+replace isApp = 0  if rootdom == "bpc.edu0"
+replace isApp = 0  if rootdom == "bpc.edu1"
+replace isApp = 0  if rootdom == "bpc.edu2"
+
+
+replace isApp = 1  if rootdom == "bpcc.edu0"
+replace isApp = 0  if rootdom == "bpcc.edu1"
+replace isApp = 0  if rootdom == "bpcc.edu2"
+replace CRIM_Inf18 = 0  if rootdom == "bpcc.edu0"
+replace HS_beh18   = 0  if rootdom == "bpcc.edu0"
+replace SEX18      = 0  if rootdom == "bpcc.edu0"
+replace COL_beh18  = 1  if rootdom == "bpcc.edu0"
+
+
+replace isApp = 1  if rootdom == "bradley.edu0"
+replace isApp = .o  if rootdom == "bradley.edu1"
+replace isApp = 1  if rootdom == "bradley.edu2"
+replace CRIM_Inf18 = 1  if rootdom == "bradley.edu0"
+replace HS_beh18   = 1  if rootdom == "bradley.edu0"
+replace SEX18      = 0  if rootdom == "bradley.edu0"
+replace COL_beh18  = 1  if rootdom == "bradley.edu0"
+replace CRIM_Inf18 = 1  if rootdom == "bradley.edu2"
+replace HS_beh18   = 1  if rootdom == "bradley.edu2"
+replace SEX18      = 0  if rootdom == "bradley.edu2"
+replace COL_beh18  = 1  if rootdom == "bradley.edu2"
+
+
+
+
+replace isApp = 0  if rootdom == "brcn.edu0"
+replace isApp = 0  if rootdom == "brcn.edu1"
+replace isApp = 0  if rootdom == "brcn.edu2"
+
+
+replace isApp = .e  if rootdom == "brenau.edu0"
+replace isApp = .o  if rootdom == "brenau.edu1"
+replace isApp = 0  if rootdom == "brenau.edu2"
+
+
+replace isApp = 0  if rootdom == "brescia.edu0"
+replace isApp = 0  if rootdom == "brescia.edu1"
+replace isApp = .o  if rootdom == "brescia.edu2"
+
+
+
+
+replace isApp = 0  if rootdom == "briarcliff.edu0"
+replace isApp = 0  if rootdom == "briarcliff.edu1"
+replace isApp = 0  if rootdom == "briarcliff.edu2"
+
+
+
+
+replace isApp = .o  if rootdom == "bridgeport.edu0"
+replace isApp = 1  if rootdom == "bridgeport.edu1"
+//Missing rootdom2"
+replace CRIM_Inf18 = 1  if rootdom == "bridgeport.edu1"
+replace HS_beh18   = 1  if rootdom == "bridgeport.edu1"
+replace SEX18      = 0  if rootdom == "bridgeport.edu1"
+replace COL_beh18  = 1  if rootdom == "bridgeport.edu1"
+
+
+replace isApp = 0  if rootdom == "broward.edu0"
+replace isApp = 0  if rootdom == "broward.edu1"
+replace isApp = 0  if rootdom == "broward.edu2"
+
+
+
+
+replace isApp = 1  if rootdom == "bsc.edu0"
+replace isApp = 0  if rootdom == "bsc.edu1"
+replace isApp = 0  if rootdom == "bsc.edu2"
+replace CRIM_Inf18 = 0  if rootdom == "bsc.edu0"
+replace HS_beh18   = 1  if rootdom == "bsc.edu0"
+replace SEX18      = 0  if rootdom == "bsc.edu0"
+replace COL_beh18  = 1  if rootdom == "bsc.edu0"
+
+
+replace isApp = 0  if rootdom == "bsu.edu0"
+replace isApp = .e  if rootdom == "bsu.edu1"
+replace isApp = .e  if rootdom == "bsu.edu2"
+
+
+
+
+replace isApp = 0  if rootdom == "butc.edu0"
 //Missing 
 
 
-replace isApp = 0  if rootdom0 == "butler.edu"
-replace isApp = 0  if rootdom1 == "butler.edu"
-replace isApp = 0  if rootdom2 == "butler.edu"
 
 
-replace isApp = 1  if rootdom0 == "butlercc.edu"
-replace isApp = 0  if rootdom1 == "butlercc.edu"
-replace isApp = .o  if rootdom2 == "butlercc.edu"
 
-
-replace isApp = 0  if rootdom0 == "bvu.edu"
-replace isApp = 0  if rootdom1 == "bvu.edu"
-replace isApp = 0  if rootdom2 == "bvu.edu"
-
-
-replace isApp = 0  if rootdom0 == "byui.edu"
-replace isApp = .o  if rootdom1 == "byui.edu"
-replace isApp = .o  if rootdom2 == "byui.edu"
-
-
-replace isApp = 0  if rootdom0 == "cacc.edu"
-replace isApp = 0  if rootdom1 == "cacc.edu"
-replace isApp = .o  if rootdom2 == "cacc.edu"
-
-
-replace isApp = 1  if rootdom0 == "calhoun.edu"
-replace isApp = 0  if rootdom1 == "calhoun.edu"
-replace isApp = 0  if rootdom2 == "calhoun.edu"
-replace CRIM_Inf18 = 0  if rootdom0 == "calhoun.edu"
-replace HS_beh18   = 0  if rootdom0 == "calhoun.edu"
-replace SEX18      = 0  if rootdom0 == "calhoun.edu"
-replace COL_beh18  = 0  if rootdom0 == "calhoun.edu"
-
-replace isApp = 0  if rootdom0 == "campbellsville.edu"
-replace isApp = 0  if rootdom1 == "campbellsville.edu"
-replace isApp = 0  if rootdom2 == "campbellsville.edu"
-
-
-replace isApp = 1  if rootdom0 == "captechu.edu"
-replace isApp = .o  if rootdom1 == "captechu.edu"
-replace isApp = .o  if rootdom2 == "captechu.edu"
-replace CRIM_Inf18 = 0  if rootdom0 == "captechu.edu"
-replace HS_beh18   = 0  if rootdom0 == "captechu.edu"
-replace SEX18      = 0  if rootdom0 == "captechu.edu"
-replace COL_beh18  = 0  if rootdom0 == "captechu.edu"
+replace isApp = 0  if rootdom == "butler.edu0"
+replace isApp = 0  if rootdom == "butler.edu1"
+replace isApp = 0  if rootdom == "butler.edu2"
 
-replace isApp = 1  if rootdom0 == "carver.edu"
-replace isApp = 1  if rootdom1 == "carver.edu"
-replace isApp = 0  if rootdom2 == "carver.edu"
-replace CRIM_Inf18 = 1  if rootdom0 == "carver.edu"/// 
-replace HS_beh18   = 1  if rootdom0 == "carver.edu"
-replace SEX18      = 0  if rootdom0 == "carver.edu"
-replace COL_beh18  = 1  if rootdom0 == "carver.edu"
-replace CRIM_Inf18 = 1  if rootdom1 == "carver.edu"/// 
-replace HS_beh18   = 1  if rootdom1 == "carver.edu"
-replace SEX18      = 0  if rootdom1 == "carver.edu"
-replace COL_beh18  = 1  if rootdom1 == "carver.edu"
 
-replace isApp = 1  if rootdom0 == "cau.edu"
-replace isApp = .o  if rootdom1 == "cau.edu"
-replace isApp = 0  if rootdom2 == "cau.edu"
-replace CRIM_Inf18 = 1  if rootdom0 == "cau.edu"
-replace HS_beh18   = 1  if rootdom0 == "cau.edu"
-replace SEX18      = 0  if rootdom0 == "cau.edu"
-replace COL_beh18  = 1  if rootdom0 == "cau.edu"
-
-replace isApp = 0  if rootdom0 == "cbts.edu"
-replace isApp = 1  if rootdom1 == "cbts.edu"
-replace isApp = 0  if rootdom2 == "cbts.edu"
-replace CRIM_Inf18 = 0  if rootdom0 == "cbts.edu"
-replace HS_beh18   = 0  if rootdom0 == "cbts.edu"
-replace SEX18      = 0  if rootdom0 == "cbts.edu"
-replace COL_beh18  = 0  if rootdom0 == "cbts.edu"
-
-replace isApp = 0  if rootdom0 == "ccal.edu"
-//Missing rootdom1 and rootdom2
 
 
-replace isApp = 0  if rootdom0 == "ccaurora.edu"
-replace isApp = 0  if rootdom1 == "ccaurora.edu"
-replace isApp = 0  if rootdom2 == "ccaurora.edu"
-
-
-replace isApp = 1  if rootdom0 == "ccbbc.edu"
-replace isApp = .e  if rootdom1 == "ccbbc.edu"
-replace isApp = 0  if rootdom2 == "ccbbc.edu"
-replace CRIM_Inf18 = 1  if rootdom0 == "ccbbc.edu"
-replace HS_beh18   = 0  if rootdom0 == "ccbbc.edu"
-replace SEX18      = 0  if rootdom0 == "ccbbc.edu"
-replace COL_beh18  = 0  if rootdom0 == "ccbbc.edu"
-
-replace isApp = .e  if rootdom0 == "ccc.commnet.edu"
-replace isApp = .e  if rootdom1 == "ccc.commnet.edu"
-replace isApp = .e  if rootdom2 == "ccc.commnet.edu"
-
-
-replace isApp = 0  if rootdom0 == "ccd.edu"
-replace isApp = 0  if rootdom1 == "ccd.edu"
-replace isApp = 0  if rootdom2 == "ccd.edu"
-
-
-replace isApp = 0  if rootdom0 == "ccga.edu"
-replace isApp = 0  if rootdom1 == "ccga.edu"
-replace isApp = 0  if rootdom2 == "ccga.edu"
-
-replace isApp = 1  if rootdom0 == "ccsj.edu"
-replace isApp = .o  if rootdom1 == "ccsj.edu"
-replace isApp = 0  if rootdom2 == "ccsj.edu"
-replace CRIM_Inf18 = 0  if rootdom0 == "ccsj.edu"
-replace HS_beh18   = 0  if rootdom0 == "ccsj.edu"
-replace SEX18      = 0  if rootdom0 == "ccsj.edu"
-replace COL_beh18  = 0  if rootdom0 == "ccsj.edu"
-
-replace isApp = 0  if rootdom0 == "ccsu.edu"
-replace isApp = 0  if rootdom1 == "ccsu.edu"
-replace isApp = 0  if rootdom2 == "ccsu.edu"
-
-replace isApp = 0  if rootdom0 == "cecil.edu"
-replace isApp = 0  if rootdom1 == "cecil.edu"
-replace isApp = 0  if rootdom2 == "cecil.edu"
-
-replace isApp = .o  if rootdom0 == "centenary.edu"
-replace isApp = 1  if rootdom1 == "centenary.edu"
-replace isApp = 0  if rootdom2 == "centenary.edu"
-replace CRIM_Inf18 = 1  if rootdom1 == "centenary.edu"
-replace HS_beh18   = 1  if rootdom1 == "centenary.edu"
-replace SEX18      = 0  if rootdom1 == "centenary.edu"
-replace COL_beh18  = 0  if rootdom1 == "centenary.edu"
+replace isApp = 1  if rootdom == "butlercc.edu0"
+replace isApp = 0  if rootdom == "butlercc.edu1"
+replace isApp = .o  if rootdom == "butlercc.edu2"
 
-replace isApp = 0  if rootdom0 == "central.edu"
-replace isApp = 0  if rootdom1 == "central.edu"
-replace isApp = 0  if rootdom2 == "central.edu"
 
 
-replace isApp = .o  if rootdom0 == "centralchristian.edu"
-replace isApp = .o  if rootdom1 == "centralchristian.edu"
-replace isApp = 0  if rootdom2 == "centralchristian.edu"
-
-
-replace isApp = 0  if rootdom0 == "centre.edu"
-replace isApp = 0  if rootdom1 == "centre.edu"
-replace isApp = 0  if rootdom2 == "centre.edu"
-
-
-replace isApp = 0  if rootdom0 == "cf.edu"
-replace isApp = .o  if rootdom1 == "cf.edu"
-replace isApp = 0  if rootdom2 == "cf.edu"
 
-replace isApp = 0  if rootdom0 == "chaminade.edu"
-replace isApp = 0  if rootdom1 == "chaminade.edu"
-replace isApp = 0  if rootdom2 == "chaminade.edu"
-
-
-replace isApp = 0  if rootdom0 == "charteroak.edu"
-replace isApp = 0  if rootdom1 == "charteroak.edu"
-replace isApp = 0  if rootdom2 == "charteroak.edu"
-
-replace isApp = 1  if rootdom0 == "chattahoocheetech.edu"
-replace isApp = 0  if rootdom1 == "chattahoocheetech.edu"
-replace isApp = 1  if rootdom2 == "chattahoocheetech.edu"
-replace CRIM_Inf18 = 0  if rootdom0 == "chattahoocheetech.edu"
-replace HS_beh18   = 0  if rootdom0 == "chattahoocheetech.edu"
-replace SEX18      = 0  if rootdom0 == "chattahoocheetech.edu"
-replace COL_beh18  = 0  if rootdom0 == "chattahoocheetech.edu"
-replace CRIM_Inf18 = 0  if rootdom2 == "chattahoocheetech.edu"
-replace HS_beh18   = 0  if rootdom2 == "chattahoocheetech.edu"
-replace SEX18      = 0  if rootdom2 == "chattahoocheetech.edu"
-replace COL_beh18  = 0  if rootdom2 == "chattahoocheetech.edu"
+replace isApp = 0  if rootdom == "bvu.edu0"
+replace isApp = 0  if rootdom == "bvu.edu1"
+replace isApp = 0  if rootdom == "bvu.edu2"
 
 
-replace isApp = 0  if rootdom0 == "chesapeake.edu"
-replace isApp = 0  if rootdom1 == "chesapeake.edu"
-replace isApp = 0  if rootdom2 == "chesapeake.edu"
 
 
-replace isApp = 1  if rootdom0 == "chipola.edu"
-replace isApp = 1  if rootdom1 == "chipola.edu"
-replace isApp = 0  if rootdom2 == "chipola.edu"
-replace CRIM_Inf18 = 1  if rootdom0 == "chipola.edu"
-replace HS_beh18   = 1  if rootdom0 == "chipola.edu"
-replace SEX18      = 0  if rootdom0 == "chipola.edu"
-replace COL_beh18  = 1  if rootdom0 == "chipola.edu"
-replace CRIM_Inf18 = 1  if rootdom1 == "chipola.edu"
-replace HS_beh18   = 1  if rootdom1 == "chipola.edu"
-replace SEX18      = 0  if rootdom1 == "chipola.edu"
-replace COL_beh18  = 1  if rootdom1 == "chipola.edu"
+replace isApp = 0  if rootdom == "byui.edu0"
+replace isApp = .o  if rootdom == "byui.edu1"
+replace isApp = .o  if rootdom == "byui.edu2"
 
-replace isApp = .o  if rootdom0 == "clarke.edu"
-replace isApp = 0  if rootdom1 == "clarke.edu"
-replace isApp = 0  if rootdom2 == "clarke.edu"
 
-replace isApp = 1  if rootdom0 == "clayton.edu"
-replace isApp = 0  if rootdom1 == "clayton.edu"
-replace isApp = 1  if rootdom2 == "clayton.edu"
-replace CRIM_Inf18 = 1  if rootdom0 == "clayton.edu"
-replace HS_beh18   = 1  if rootdom0 == "clayton.edu"
-replace SEX18      = 0  if rootdom0 == "clayton.edu"
-replace COL_beh18  = 1  if rootdom0 == "clayton.edu"
-replace CRIM_Inf18 = 1  if rootdom1 == "clayton.edu"
-replace HS_beh18   = 1  if rootdom1 == "clayton.edu"
-replace SEX18      = 0  if rootdom1 == "clayton.edu"
-replace COL_beh18  = 1  if rootdom1 == "clayton.edu"
 
-replace isApp = 0  if rootdom0 == "cloud.edu"
-replace isApp = 0  if rootdom1 == "cloud.edu"
-replace isApp = 0  if rootdom2 == "cloud.edu"
 
+replace isApp = 0  if rootdom == "cacc.edu0"
+replace isApp = 0  if rootdom == "cacc.edu1"
+replace isApp = .o  if rootdom == "cacc.edu2"
 
-replace isApp = 0  if rootdom0 == "cltcc.edu"
-replace isApp = 0  if rootdom1 == "cltcc.edu"
-replace isApp = 0  if rootdom2 == "cltcc.edu"
 
 
-replace isApp = 0  if rootdom0 == "cmcc.edu"
-replace isApp = 0  if rootdom1 == "cmcc.edu"
-replace isApp = 0  if rootdom2 == "cmcc.edu"
 
-
-replace isApp = .o  if rootdom0 == "cncc.edu"
-replace isApp = .o  if rootdom1 == "cncc.edu"
-replace isApp = .o  if rootdom2 == "cncc.edu"
-
-
-replace isApp = .o  if rootdom0 == "coa.edu"
-replace isApp = .o  if rootdom1 == "coa.edu"
-replace isApp = 0  if rootdom2 == "coa.edu"
+replace isApp = 1  if rootdom == "calhoun.edu0"
+replace isApp = 0  if rootdom == "calhoun.edu1"
+replace isApp = 0  if rootdom == "calhoun.edu2"
+replace CRIM_Inf18 = 0  if rootdom == "calhoun.edu0"
+replace HS_beh18   = 0  if rootdom == "calhoun.edu0"
+replace SEX18      = 0  if rootdom == "calhoun.edu0"
+replace COL_beh18  = 0  if rootdom == "calhoun.edu0"
 
 
-replace isApp = .o  if rootdom0 == "cod.edu"
-replace isApp = .o  if rootdom1 == "cod.edu"
-replace isApp = 0  if rootdom2 == "cod.edu"
+replace isApp = 0  if rootdom == "campbellsville.edu0"
+replace isApp = 0  if rootdom == "campbellsville.edu1"
+replace isApp = 0  if rootdom == "campbellsville.edu2"
 
-replace isApp = 1  if rootdom0 == "coe.edu"
-replace isApp = 1  if rootdom1 == "coe.edu"
-replace isApp = 0  if rootdom2 == "coe.edu"
-replace CRIM_Inf18 = 0  if rootdom0 == "coe.edu"
-replace HS_beh18   = 0  if rootdom0 == "coe.edu"
-replace SEX18      = 0  if rootdom0 == "coe.edu"
-replace COL_beh18  = 0  if rootdom0 == "coe.edu"
-replace CRIM_Inf18 = 0  if rootdom1 == "coe.edu"
-replace HS_beh18   = 0  if rootdom1 == "coe.edu"
-replace SEX18      = 0  if rootdom1 == "coe.edu"
-replace COL_beh18  = 0  if rootdom1 == "coe.edu"
 
 
 
-replace isApp = .o  if rootdom0 == "coffeyville.edu"
-replace isApp = 1  if rootdom1 == "coffeyville.edu"
-replace isApp = .e  if rootdom2 == "coffeyville.edu"
-replace CRIM_Inf18 = 0  if rootdom1 == "coffeyville.edu"
-replace HS_beh18   = 0  if rootdom1 == "coffeyville.edu"
-replace SEX18      = 0  if rootdom1 == "coffeyville.edu"
-replace COL_beh18  = 0  if rootdom1 == "coffeyville.edu"
+replace isApp = 1  if rootdom == "captechu.edu0"
+replace isApp = .o  if rootdom == "captechu.edu1"
+replace isApp = .o  if rootdom == "captechu.edu2"
+replace CRIM_Inf18 = 0  if rootdom == "captechu.edu0"
+replace HS_beh18   = 0  if rootdom == "captechu.edu0"
+replace SEX18      = 0  if rootdom == "captechu.edu0"
+replace COL_beh18  = 0  if rootdom == "captechu.edu0"
 
-replace isApp = 0  if rootdom0 == "colby.edu"
-replace isApp = 0  if rootdom1 == "colby.edu"
-replace isApp = 0  if rootdom2 == "colby.edu"
 
+replace isApp = 1  if rootdom == "carver.edu0"
+replace isApp = 1  if rootdom == "carver.edu1"
+replace isApp = 0  if rootdom == "carver.edu2"
+replace CRIM_Inf18 = 1  if rootdom == "carver.edu" // 0"
+replace HS_beh18   = 1  if rootdom == "carver.edu0"
+replace SEX18      = 0  if rootdom == "carver.edu0"
+replace COL_beh18  = 1  if rootdom == "carver.edu0"
+replace CRIM_Inf18 = 1  if rootdom == "carver.edu" // 1"
+replace HS_beh18   = 1  if rootdom == "carver.edu1"
+replace SEX18      = 0  if rootdom == "carver.edu1"
+replace COL_beh18  = 1  if rootdom == "carver.edu1"
 
-replace isApp = .o  if rootdom0 == "colbycc.edu"
-replace isApp = .o  if rootdom1 == "colbycc.edu"
-replace isApp = 0  if rootdom2 == "colbycc.edu"
 
+replace isApp = 1  if rootdom == "cau.edu0"
+replace isApp = .o  if rootdom == "cau.edu1"
+replace isApp = 0  if rootdom == "cau.edu2"
+replace CRIM_Inf18 = 1  if rootdom == "cau.edu0"
+replace HS_beh18   = 1  if rootdom == "cau.edu0"
+replace SEX18      = 0  if rootdom == "cau.edu0"
+replace COL_beh18  = 1  if rootdom == "cau.edu0"
 
-replace isApp = 0  if rootdom0 == "collegeamerica.edu"
-replace isApp = 0  if rootdom1 == "collegeamerica.edu"
-replace isApp = 0  if rootdom2 == "collegeamerica.edu"
 
-replace isApp = 0  if rootdom0 == "collegeofidaho.edu"
-replace isApp = 0  if rootdom1 == "collegeofidaho.edu"
-replace isApp = 0  if rootdom2 == "collegeofidaho.edu"
+replace isApp = 0  if rootdom == "cbts.edu0"
+replace isApp = 1  if rootdom == "cbts.edu1"
+replace isApp = 0  if rootdom == "cbts.edu2"
+replace CRIM_Inf18 = 0  if rootdom == "cbts.edu0"
+replace HS_beh18   = 0  if rootdom == "cbts.edu0"
+replace SEX18      = 0  if rootdom == "cbts.edu0"
+replace COL_beh18  = 0  if rootdom == "cbts.edu0"
 
 
-replace isApp = 1  if rootdom0 == "colorado.edu"
-replace isApp = 0  if rootdom1 == "colorado.edu"
-replace isApp = .o  if rootdom2 == "colorado.edu"
-replace CRIM_Inf18 = 1  if rootdom0 == "colorado.edu"
-replace HS_beh18   = 1  if rootdom0 == "colorado.edu"
-replace SEX18      = 0  if rootdom0 == "colorado.edu"
-replace COL_beh18  = 1  if rootdom0 == "colorado.edu"
+replace isApp = 0  if rootdom == "ccal.edu0"
+//Missing rootdom and rootdom21"
 
-replace isApp = .o  if rootdom0 == "coloradocollege.edu"
-replace isApp = .o  if rootdom1 == "coloradocollege.edu"
-replace isApp = 0  if rootdom2 == "coloradocollege.edu"
 
-replace isApp = 0  if rootdom0 == "coloradomesa.edu"
-replace isApp = 0  if rootdom1 == "coloradomesa.edu"
-replace isApp = 0  if rootdom2 == "coloradomesa.edu"
 
 
-replace isApp = .e  if rootdom0 == "coloradomtn.edu"
-replace isApp = .e  if rootdom1 == "coloradomtn.edu"
-replace isApp = .e  if rootdom2 == "coloradomtn.edu"
+replace isApp = 0  if rootdom == "ccaurora.edu0"
+replace isApp = 0  if rootdom == "ccaurora.edu1"
+replace isApp = 0  if rootdom == "ccaurora.edu2"
 
 
-replace isApp = .o  if rootdom0 == "colostate.edu"
-replace isApp = 0  if rootdom1 == "colostate.edu"
-replace isApp = .o  if rootdom2 == "colostate.edu"
 
-replace isApp = 0  if rootdom0 == "colum.edu"
-replace isApp = 0  if rootdom1 == "colum.edu"
-replace isApp = 0  if rootdom2 == "colum.edu"
 
-replace isApp = 1  if rootdom0 == "columbusstate.edu"
-replace isApp = .o  if rootdom1 == "columbusstate.edu"
-replace isApp = 0  if rootdom2 == "columbusstate.edu"
-replace CRIM_Inf18 = 1  if rootdom0 == "columbusstate.edu"
-replace HS_beh18   = 0  if rootdom0 == "columbusstate.edu"
-replace SEX18      = 0  if rootdom0 == "columbusstate.edu"
-replace COL_beh18  = 1  if rootdom0 == "columbusstate.edu"
+replace isApp = 1  if rootdom == "ccbbc.edu0"
+replace isApp = .e  if rootdom == "ccbbc.edu1"
+replace isApp = 0  if rootdom == "ccbbc.edu2"
+replace CRIM_Inf18 = 1  if rootdom == "ccbbc.edu0"
+replace HS_beh18   = 0  if rootdom == "ccbbc.edu0"
+replace SEX18      = 0  if rootdom == "ccbbc.edu0"
+replace COL_beh18  = 0  if rootdom == "ccbbc.edu0"
 
-replace isApp = .o  if rootdom0 == "columbustech.edu"
-replace isApp = 1  if rootdom1 == "columbustech.edu"
-replace isApp = 0  if rootdom2 == "columbustech.edu"
-replace CRIM_Inf18 = 0  if rootdom1 == "columbustech.edu"
-replace HS_beh18   = 0  if rootdom1 == "columbustech.edu"
-replace SEX18      = 0  if rootdom1 == "columbustech.edu"
-replace COL_beh18  = 0  if rootdom1 == "columbustech.edu"
 
-replace isApp = 0  if rootdom0 == "conncoll.edu"
-replace isApp = .o  if rootdom1 == "conncoll.edu"
-replace isApp = .o  if rootdom2 == "conncoll.edu"
+replace isApp = .e  if rootdom == "ccc.commnet.edu0"
+replace isApp = .e  if rootdom == "ccc.commnet.edu1"
+replace isApp = .e  if rootdom == "ccc.commnet.edu2"
 
 
-replace isApp = 1  if rootdom0 == "cookman.edu"
-replace isApp = .o  if rootdom1 == "cookman.edu"
+
+
+replace isApp = 0  if rootdom == "ccd.edu0"
+replace isApp = 0  if rootdom == "ccd.edu1"
+replace isApp = 0  if rootdom == "ccd.edu2"
+
+
+
+
+replace isApp = 0  if rootdom == "ccga.edu0"
+replace isApp = 0  if rootdom == "ccga.edu1"
+replace isApp = 0  if rootdom == "ccga.edu2"
+
+
+replace isApp = 1  if rootdom == "ccsj.edu0"
+replace isApp = .o  if rootdom == "ccsj.edu1"
+replace isApp = 0  if rootdom == "ccsj.edu2"
+replace CRIM_Inf18 = 0  if rootdom == "ccsj.edu0"
+replace HS_beh18   = 0  if rootdom == "ccsj.edu0"
+replace SEX18      = 0  if rootdom == "ccsj.edu0"
+replace COL_beh18  = 0  if rootdom == "ccsj.edu0"
+
+
+replace isApp = 0  if rootdom == "ccsu.edu0"
+replace isApp = 0  if rootdom == "ccsu.edu1"
+replace isApp = 0  if rootdom == "ccsu.edu2"
+
+
+replace isApp = 0  if rootdom == "cecil.edu0"
+replace isApp = 0  if rootdom == "cecil.edu1"
+replace isApp = 0  if rootdom == "cecil.edu2"
+
+
+replace isApp = .o  if rootdom == "centenary.edu0"
+replace isApp = 1  if rootdom == "centenary.edu1"
+replace isApp = 0  if rootdom == "centenary.edu2"
+replace CRIM_Inf18 = 1  if rootdom == "centenary.edu1"
+replace HS_beh18   = 1  if rootdom == "centenary.edu1"
+replace SEX18      = 0  if rootdom == "centenary.edu1"
+replace COL_beh18  = 0  if rootdom == "centenary.edu1"
+
+
+replace isApp = 0  if rootdom == "central.edu0"
+replace isApp = 0  if rootdom == "central.edu1"
+replace isApp = 0  if rootdom == "central.edu2"
+
+
+
+
+replace isApp = .o  if rootdom == "centralchristian.edu0"
+replace isApp = .o  if rootdom == "centralchristian.edu1"
+replace isApp = 0  if rootdom == "centralchristian.edu2"
+
+
+
+
+replace isApp = 0  if rootdom == "centre.edu0"
+replace isApp = 0  if rootdom == "centre.edu1"
+replace isApp = 0  if rootdom == "centre.edu2"
+
+
+
+
+replace isApp = 0  if rootdom == "cf.edu0"
+replace isApp = .o  if rootdom == "cf.edu1"
+replace isApp = 0  if rootdom == "cf.edu2"
+
+
+replace isApp = 0  if rootdom == "chaminade.edu0"
+replace isApp = 0  if rootdom == "chaminade.edu1"
+replace isApp = 0  if rootdom == "chaminade.edu2"
+
+
+
+
+replace isApp = 0  if rootdom == "charteroak.edu0"
+replace isApp = 0  if rootdom == "charteroak.edu1"
+replace isApp = 0  if rootdom == "charteroak.edu2"
+
+
+replace isApp = 1  if rootdom == "chattahoocheetech.edu0"
+replace isApp = 0  if rootdom == "chattahoocheetech.edu1"
+replace isApp = 1  if rootdom == "chattahoocheetech.edu2"
+replace CRIM_Inf18 = 0  if rootdom == "chattahoocheetech.edu0"
+replace HS_beh18   = 0  if rootdom == "chattahoocheetech.edu0"
+replace SEX18      = 0  if rootdom == "chattahoocheetech.edu0"
+replace COL_beh18  = 0  if rootdom == "chattahoocheetech.edu0"
+replace CRIM_Inf18 = 0  if rootdom == "chattahoocheetech.edu2"
+replace HS_beh18   = 0  if rootdom == "chattahoocheetech.edu2"
+replace SEX18      = 0  if rootdom == "chattahoocheetech.edu2"
+replace COL_beh18  = 0  if rootdom == "chattahoocheetech.edu2"
+
+
+
+
+replace isApp = 0  if rootdom == "chesapeake.edu0"
+replace isApp = 0  if rootdom == "chesapeake.edu1"
+replace isApp = 0  if rootdom == "chesapeake.edu2"
+
+
+
+
+replace isApp = 1  if rootdom == "chipola.edu0"
+replace isApp = 1  if rootdom == "chipola.edu1"
+replace isApp = 0  if rootdom == "chipola.edu2"
+replace CRIM_Inf18 = 1  if rootdom == "chipola.edu0"
+replace HS_beh18   = 1  if rootdom == "chipola.edu0"
+replace SEX18      = 0  if rootdom == "chipola.edu0"
+replace COL_beh18  = 1  if rootdom == "chipola.edu0"
+replace CRIM_Inf18 = 1  if rootdom == "chipola.edu1"
+replace HS_beh18   = 1  if rootdom == "chipola.edu1"
+replace SEX18      = 0  if rootdom == "chipola.edu1"
+replace COL_beh18  = 1  if rootdom == "chipola.edu1"
+
+
+replace isApp = .o  if rootdom == "clarke.edu0"
+replace isApp = 0  if rootdom == "clarke.edu1"
+replace isApp = 0  if rootdom == "clarke.edu2"
+
+
+replace isApp = 1  if rootdom == "clayton.edu0"
+replace isApp = 0  if rootdom == "clayton.edu1"
+replace isApp = 1  if rootdom == "clayton.edu2"
+replace CRIM_Inf18 = 1  if rootdom == "clayton.edu0"
+replace HS_beh18   = 1  if rootdom == "clayton.edu0"
+replace SEX18      = 0  if rootdom == "clayton.edu0"
+replace COL_beh18  = 1  if rootdom == "clayton.edu0"
+replace CRIM_Inf18 = 1  if rootdom == "clayton.edu1"
+replace HS_beh18   = 1  if rootdom == "clayton.edu1"
+replace SEX18      = 0  if rootdom == "clayton.edu1"
+replace COL_beh18  = 1  if rootdom == "clayton.edu1"
+
+
+replace isApp = 0  if rootdom == "cloud.edu0"
+replace isApp = 0  if rootdom == "cloud.edu1"
+replace isApp = 0  if rootdom == "cloud.edu2"
+
+
+
+
+replace isApp = 0  if rootdom == "cltcc.edu0"
+replace isApp = 0  if rootdom == "cltcc.edu1"
+replace isApp = 0  if rootdom == "cltcc.edu2"
+
+
+
+
+replace isApp = 0  if rootdom == "cmcc.edu0"
+replace isApp = 0  if rootdom == "cmcc.edu1"
+replace isApp = 0  if rootdom == "cmcc.edu2"
+
+
+
+
+replace isApp = .o  if rootdom == "cncc.edu0"
+replace isApp = .o  if rootdom == "cncc.edu1"
+replace isApp = .o  if rootdom == "cncc.edu2"
+
+
+
+
+replace isApp = .o  if rootdom == "coa.edu0"
+replace isApp = .o  if rootdom == "coa.edu1"
+replace isApp = 0  if rootdom == "coa.edu2"
+
+
+
+
+replace isApp = .o  if rootdom == "cod.edu0"
+replace isApp = .o  if rootdom == "cod.edu1"
+replace isApp = 0  if rootdom == "cod.edu2"
+
+
+replace isApp = 1  if rootdom == "coe.edu0"
+replace isApp = 1  if rootdom == "coe.edu1"
+replace isApp = 0  if rootdom == "coe.edu2"
+replace CRIM_Inf18 = 0  if rootdom == "coe.edu0"
+replace HS_beh18   = 0  if rootdom == "coe.edu0"
+replace SEX18      = 0  if rootdom == "coe.edu0"
+replace COL_beh18  = 0  if rootdom == "coe.edu0"
+replace CRIM_Inf18 = 0  if rootdom == "coe.edu1"
+replace HS_beh18   = 0  if rootdom == "coe.edu1"
+replace SEX18      = 0  if rootdom == "coe.edu1"
+replace COL_beh18  = 0  if rootdom == "coe.edu1"
+
+
+
+
+
+
+replace isApp = .o  if rootdom == "coffeyville.edu0"
+replace isApp = 1  if rootdom == "coffeyville.edu1"
+replace isApp = .e  if rootdom == "coffeyville.edu2"
+replace CRIM_Inf18 = 0  if rootdom == "coffeyville.edu1"
+replace HS_beh18   = 0  if rootdom == "coffeyville.edu1"
+replace SEX18      = 0  if rootdom == "coffeyville.edu1"
+replace COL_beh18  = 0  if rootdom == "coffeyville.edu1"
+
+
+replace isApp = 0  if rootdom == "colby.edu0"
+replace isApp = 0  if rootdom == "colby.edu1"
+replace isApp = 0  if rootdom == "colby.edu2"
+
+
+
+
+replace isApp = .o  if rootdom == "colbycc.edu0"
+replace isApp = .o  if rootdom == "colbycc.edu1"
+replace isApp = 0  if rootdom == "colbycc.edu2"
+
+
+
+
+replace isApp = 0  if rootdom == "collegeamerica.edu0"
+replace isApp = 0  if rootdom == "collegeamerica.edu1"
+replace isApp = 0  if rootdom == "collegeamerica.edu2"
+
+
+replace isApp = 0  if rootdom == "collegeofidaho.edu0"
+replace isApp = 0  if rootdom == "collegeofidaho.edu1"
+replace isApp = 0  if rootdom == "collegeofidaho.edu2"
+
+
+
+
+replace isApp = 1  if rootdom == "colorado.edu0"
+replace isApp = 0  if rootdom == "colorado.edu1"
+replace isApp = .o  if rootdom == "colorado.edu2"
+replace CRIM_Inf18 = 1  if rootdom == "colorado.edu0"
+replace HS_beh18   = 1  if rootdom == "colorado.edu0"
+replace SEX18      = 0  if rootdom == "colorado.edu0"
+replace COL_beh18  = 1  if rootdom == "colorado.edu0"
+
+
+replace isApp = .o  if rootdom == "coloradocollege.edu0"
+replace isApp = .o  if rootdom == "coloradocollege.edu1"
+replace isApp = 0  if rootdom == "coloradocollege.edu2"
+
+
+replace isApp = 0  if rootdom == "coloradomesa.edu0"
+replace isApp = 0  if rootdom == "coloradomesa.edu1"
+replace isApp = 0  if rootdom == "coloradomesa.edu2"
+
+
+
+
+replace isApp = .e  if rootdom == "coloradomtn.edu0"
+replace isApp = .e  if rootdom == "coloradomtn.edu1"
+replace isApp = .e  if rootdom == "coloradomtn.edu2"
+
+
+
+
+replace isApp = .o  if rootdom == "colostate.edu0"
+replace isApp = 0  if rootdom == "colostate.edu1"
+replace isApp = .o  if rootdom == "colostate.edu2"
+
+
+replace isApp = 0  if rootdom == "colum.edu0"
+replace isApp = 0  if rootdom == "colum.edu1"
+replace isApp = 0  if rootdom == "colum.edu2"
+
+
+replace isApp = 1  if rootdom == "columbusstate.edu0"
+replace isApp = .o  if rootdom == "columbusstate.edu1"
+replace isApp = 0  if rootdom == "columbusstate.edu2"
+replace CRIM_Inf18 = 1  if rootdom == "columbusstate.edu0"
+replace HS_beh18   = 0  if rootdom == "columbusstate.edu0"
+replace SEX18      = 0  if rootdom == "columbusstate.edu0"
+replace COL_beh18  = 1  if rootdom == "columbusstate.edu0"
+
+
+replace isApp = .o  if rootdom == "columbustech.edu0"
+replace isApp = 1  if rootdom == "columbustech.edu1"
+replace isApp = 0  if rootdom == "columbustech.edu2"
+replace CRIM_Inf18 = 0  if rootdom == "columbustech.edu1"
+replace HS_beh18   = 0  if rootdom == "columbustech.edu1"
+replace SEX18      = 0  if rootdom == "columbustech.edu1"
+replace COL_beh18  = 0  if rootdom == "columbustech.edu1"
+
+
+replace isApp = 0  if rootdom == "conncoll.edu0"
+replace isApp = .o  if rootdom == "conncoll.edu1"
+replace isApp = .o  if rootdom == "conncoll.edu2"
+
+
+
+
+replace isApp = 1  if rootdom == "cookman.edu0"
+replace isApp = .o  if rootdom == "cookman.edu1"
 //Missing 
-replace CRIM_Inf18 = 0  if rootdom0 == "cookman.edu"
-replace HS_beh18   = 0  if rootdom0 == "cookman.edu"
-replace SEX18      = 0  if rootdom0 == "cookman.edu"
-replace COL_beh18  = 0  if rootdom0 == "cookman.edu"
 
-replace isApp = 0  if rootdom0 == "coppin.edu"
-replace isApp = 1  if rootdom1 == "coppin.edu"
-replace isApp = 0  if rootdom2 == "coppin.edu"
-replace CRIM_Inf18 = 0  if rootdom1 == "coppin.edu"
-replace HS_beh18   = 0  if rootdom1 == "coppin.edu"
-replace SEX18      = 0  if rootdom1 == "coppin.edu"
-replace COL_beh18  = 0  if rootdom1 == "coppin.edu"
-
-replace isApp = 0  if rootdom0 == "cornellcollege.edu"
-replace isApp = 0  if rootdom1 == "cornellcollege.edu"
-replace isApp = .o  if rootdom2 == "cornellcollege.edu"
+replace CRIM_Inf18 = 0  if rootdom == "cookman.edu0"
+replace HS_beh18   = 0  if rootdom == "cookman.edu0"
+replace SEX18      = 0  if rootdom == "cookman.edu0"
+replace COL_beh18  = 0  if rootdom == "cookman.edu0"
 
 
-replace isApp = 1  if rootdom0 == "covenant.edu"
-replace isApp = .o  if rootdom1 == "covenant.edu"
-replace isApp = .o  if rootdom2 == "covenant.edu"
-replace CRIM_Inf18 = 0  if rootdom0 == "covenant.edu"
-replace HS_beh18   = 0  if rootdom0 == "covenant.edu"
-replace SEX18      = 0  if rootdom0 == "covenant.edu"
-replace COL_beh18  = 0  if rootdom0 == "covenant.edu"
-
-replace isApp = .o  if rootdom0 == "cowley.edu"
-replace isApp = 0  if rootdom1 == "cowley.edu"
-replace isApp = 0  if rootdom2 == "cowley.edu"
-
-replace isApp = 1  if rootdom0 == "csi.edu"
-replace isApp = 0  if rootdom1 == "csi.edu"
-replace isApp = .o  if rootdom2 == "csi.edu"
-replace CRIM_Inf18 = 0  if rootdom0 == "csi.edu"
-replace HS_beh18   = 0  if rootdom0 == "csi.edu"
-replace SEX18      = 0  if rootdom0 == "csi.edu"
-replace COL_beh18  = 0  if rootdom0 == "csi.edu"
-
-replace isApp = 0  if rootdom0 == "csmd.edu"
-replace isApp = 0  if rootdom1 == "csmd.edu"
-replace isApp = 0  if rootdom2 == "csmd.edu"
-
-replace isApp = 1  if rootdom0 == "csu.edu"
-replace isApp = .o  if rootdom1 == "csu.edu"
-replace isApp = 1  if rootdom2 == "csu.edu"
-replace CRIM_Inf18 = 0  if rootdom0 == "csu.edu"
-replace HS_beh18   = 0  if rootdom0 == "csu.edu"
-replace SEX18      = 0  if rootdom0 == "csu.edu"
-replace COL_beh18  = 0  if rootdom0 == "csu.edu"
-replace CRIM_Inf18 = 0  if rootdom1 == "csu.edu"
-replace HS_beh18   = 0  if rootdom1 == "csu.edu"
-replace SEX18      = 0  if rootdom1 == "csu.edu"
-replace COL_beh18  = 0  if rootdom1 == "csu.edu"
+replace isApp = 0  if rootdom == "coppin.edu0"
+replace isApp = 1  if rootdom == "coppin.edu1"
+replace isApp = 0  if rootdom == "coppin.edu2"
+replace CRIM_Inf18 = 0  if rootdom == "coppin.edu1"
+replace HS_beh18   = 0  if rootdom == "coppin.edu1"
+replace SEX18      = 0  if rootdom == "coppin.edu1"
+replace COL_beh18  = 0  if rootdom == "coppin.edu1"
 
 
-replace isApp = 1  if rootdom0 == "csupueblo.edu"
-replace isApp = .o  if rootdom1 == "csupueblo.edu"
-replace isApp = .o  if rootdom2 == "csupueblo.edu"
-replace CRIM_Inf18 = 1  if rootdom0 == "csupueblo.edu"
-replace HS_beh18   = 1  if rootdom0 == "csupueblo.edu"
-replace SEX18      = 1  if rootdom0 == "csupueblo.edu"
-replace COL_beh18  = 1  if rootdom0 == "csupueblo.edu"
-
-replace isApp = 0  if rootdom0 == "cts.edu"
-replace isApp = 0  if rootdom1 == "cts.edu"
-replace isApp = 0  if rootdom2 == "cts.edu"
+replace isApp = 0  if rootdom == "cornellcollege.edu0"
+replace isApp = 0  if rootdom == "cornellcollege.edu1"
+replace isApp = .o  if rootdom == "cornellcollege.edu2"
 
 
-replace isApp = 0  if rootdom0 == "ctschicago.edu"
-replace isApp = 0  if rootdom1 == "ctschicago.edu"
-replace isApp = 0  if rootdom2 == "ctschicago.edu"
 
 
-replace isApp = 0  if rootdom0 == "ctsfw.edu"
-replace isApp = .o  if rootdom1 == "ctsfw.edu"
-replace isApp = 0  if rootdom2 == "ctsfw.edu"
+replace isApp = 1  if rootdom == "covenant.edu0"
+replace isApp = .o  if rootdom == "covenant.edu1"
+replace isApp = .o  if rootdom == "covenant.edu2"
+replace CRIM_Inf18 = 0  if rootdom == "covenant.edu0"
+replace HS_beh18   = 0  if rootdom == "covenant.edu0"
+replace SEX18      = 0  if rootdom == "covenant.edu0"
+replace COL_beh18  = 0  if rootdom == "covenant.edu0"
 
 
-replace isApp = .o  if rootdom0 == "ctu.edu"
-replace isApp = .o  if rootdom1 == "ctu.edu"
-//Missing rootdom2
+replace isApp = .o  if rootdom == "cowley.edu0"
+replace isApp = 0  if rootdom == "cowley.edu1"
+replace isApp = 0  if rootdom == "cowley.edu2"
 
 
-replace isApp = .o  if rootdom0 == "cua.edu" re admission application??
-replace isApp = .o  if rootdom1 == "template.edu"  second degree application??
-replace isApp = .o  if rootdom2 == "template.edu"
+replace isApp = 1  if rootdom == "csi.edu0"
+replace isApp = 0  if rootdom == "csi.edu1"
+replace isApp = .o  if rootdom == "csi.edu2"
+replace CRIM_Inf18 = 0  if rootdom == "csi.edu0"
+replace HS_beh18   = 0  if rootdom == "csi.edu0"
+replace SEX18      = 0  if rootdom == "csi.edu0"
+replace COL_beh18  = 0  if rootdom == "csi.edu0"
 
 
-replace isApp = 1  if rootdom0 == "cv.edu"
-replace isApp = 1  if rootdom1 == "cv.edu"
-replace isApp = .o  if rootdom2 == "cv.edu"
-replace CRIM_Inf18 = 0  if rootdom0 == "cv.edu"
-replace HS_beh18   = 0  if rootdom0 == "cv.edu"
-replace SEX18      = 0  if rootdom0 == "cv.edu"
-replace COL_beh18  = 1  if rootdom0 == "cv.edu"
-replace CRIM_Inf18 = 0  if rootdom1 == "cv.edu"
-replace HS_beh18   = 0  if rootdom1 == "cv.edu"
-replace SEX18      = 0  if rootdom1 == "cv.edu"
-replace COL_beh18  = 1  if rootdom1 == "cv.edu"
-
-replace isApp = .e  if rootdom0 == "dacc.edu"
-replace isApp = .e  if rootdom1 == "dacc.edu"
-replace isApp = .e  if rootdom2 == "dacc.edu"
-
-replace isApp = 0  if rootdom0 == "darton.edu"
-replace isApp = 0  if rootdom1 == "darton.edu"
+replace isApp = 0  if rootdom == "csmd.edu0"
+replace isApp = 0  if rootdom == "csmd.edu1"
+replace isApp = 0  if rootdom == "csmd.edu2"
 
 
-replace isApp = .e  if rootdom0 == "daytona.edu"
-replace isApp = .e  if rootdom1 == "daytona.edu"
-replace isApp = .e  if rootdom2 == "daytona.edu"
+replace isApp = 1  if rootdom == "csu.edu0"
+replace isApp = .o  if rootdom == "csu.edu1"
+replace isApp = 1  if rootdom == "csu.edu2"
+replace CRIM_Inf18 = 0  if rootdom == "csu.edu0"
+replace HS_beh18   = 0  if rootdom == "csu.edu0"
+replace SEX18      = 0  if rootdom == "csu.edu0"
+replace COL_beh18  = 0  if rootdom == "csu.edu0"
+replace CRIM_Inf18 = 0  if rootdom == "csu.edu1"
+replace HS_beh18   = 0  if rootdom == "csu.edu1"
+replace SEX18      = 0  if rootdom == "csu.edu1"
+replace COL_beh18  = 0  if rootdom == "csu.edu1"
 
 
-replace isApp = 1  if rootdom0 == "DaytonaState.edu"
-replace isApp = .o  if rootdom1 == "DaytonaState.edu"
-replace isApp = 0  if rootdom2 == "DaytonaState.edu"
-replace CRIM_Inf18 = 0  if rootdom0 == "DaytonaState.edu"
-replace HS_beh18   = 0  if rootdom0 == "DaytonaState.edu"
-replace SEX18      = 0  if rootdom0 == "DaytonaState.edu"
-replace COL_beh18  = 0  if rootdom0 == "DaytonaState.edu"
-
-replace isApp = 1  if rootdom0 == "dbq.edu"
-replace isApp = 1  if rootdom1 == "dbq.edu"
-replace isApp = 0  if rootdom2 == "dbq.edu"
-replace CRIM_Inf18 = 1  if rootdom0 == "dbq.edu"
-replace HS_beh18   = 1  if rootdom0 == "dbq.edu"
-replace SEX18      = 0  if rootdom0 == "dbq.edu"
-replace COL_beh18  = 1  if rootdom0 == "dbq.edu"
-replace CRIM_Inf18 = 1  if rootdom1 == "dbq.edu"
-replace HS_beh18   = 0  if rootdom1 == "dbq.edu"
-replace SEX18      = 0  if rootdom1 == "dbq.edu"
-replace COL_beh18  = 1  if rootdom1 == "dbq.edu"
-
-replace isApp = 0  if rootdom0 == "dc3.edu"
-replace isApp = 0  if rootdom1 == "dc3.edu"
-replace isApp = 0  if rootdom2 == "dc3.edu"
-
-replace isApp = .o  if rootdom0 == "depaul.edu"
-replace isApp = 0  if rootdom1 == "depaul.edu"
-replace isApp = 0  if rootdom2 == "depaul.edu"
 
 
-replace isApp = 1  if rootdom0 == "depauw.edu"
-replace isApp = .o  if rootdom1 == "depauw.edu"
-replace isApp = 0  if rootdom2 == "depauw.edu"
-replace CRIM_Inf18 = 1  if rootdom0 == "depauw.edu"
-replace HS_beh18   = 1  if rootdom0 == "depauw.edu"
-replace SEX18      = 0  if rootdom0 == "depauw.edu"
-replace COL_beh18  = 1  if rootdom0 == "depauw.edu"
-
-replace isApp = 0  if rootdom0 == "desu.edu"
-replace isApp = 0  if rootdom1 == "desu.edu"
-replace isApp = 0  if rootdom2 == "desu.edu"
+replace isApp = 1  if rootdom == "csupueblo.edu0"
+replace isApp = .o  if rootdom == "csupueblo.edu1"
+replace isApp = .o  if rootdom == "csupueblo.edu2"
+replace CRIM_Inf18 = 1  if rootdom == "csupueblo.edu0"
+replace HS_beh18   = 1  if rootdom == "csupueblo.edu0"
+replace SEX18      = 1  if rootdom == "csupueblo.edu0"
+replace COL_beh18  = 1  if rootdom == "csupueblo.edu0"
 
 
-replace isApp = .e  if rootdom0 == "dhs.edu"
-replace isApp = .e  if rootdom1 == "dhs.edu"
-replace isApp = .e  if rootdom2 == "dhs.edu"
+replace isApp = 0  if rootdom == "cts.edu0"
+replace isApp = 0  if rootdom == "cts.edu1"
+replace isApp = 0  if rootdom == "cts.edu2"
 
 
-replace isApp = .o  if rootdom0 == "dillard.edu"
-replace isApp = 1  if rootdom1 == "dillard.edu"
-replace isApp = 1  if rootdom2 == "dillard.edu"
-replace CRIM_Inf18 = 1  if rootdom1 == "dillard.edu"
-replace HS_beh18   = 0  if rootdom1 == "dillard.edu"
-replace SEX18      = 0  if rootdom1 == "dillard.edu"
-replace COL_beh18  = 1  if rootdom1 == "dillard.edu"
-replace CRIM_Inf18 = 1  if rootdom2 == "dillard.edu"
-replace HS_beh18   = 0  if rootdom2 == "dillard.edu"
-replace SEX18      = 0  if rootdom2 == "dillard.edu"
-replace COL_beh18  = 1  if rootdom2 == "dillard.edu"
 
 
-replace isApp = 1  if rootdom0 == "dmacc.edu"
-replace isApp = .o  if rootdom1 == "dmacc.edu"
-replace isApp = 0  if rootdom2 == "dmacc.edu"
-replace CRIM_Inf18 = 0  if rootdom0 == "dmacc.edu"
-replace HS_beh18   = 0  if rootdom0 == "dmacc.edu"
-replace SEX18      = 0  if rootdom0 == "dmacc.edu"
-replace COL_beh18  = 0  if rootdom0 == "dmacc.edu"
-
-replace isApp = 1  if rootdom0 == "dmtc.edu"
-replace isApp = 0  if rootdom1 == "dmtc.edu"
-replace isApp = 0  if rootdom2 == "dmtc.edu"
-replace CRIM_Inf18 = 0  if rootdom0 == "dmtc.edu"
-replace HS_beh18   = 0  if rootdom0 == "dmtc.edu"
-replace SEX18      = 0  if rootdom0 == "dmtc.edu"
-replace COL_beh18  = 0  if rootdom0 == "dmtc.edu"
-
-replace isApp = 0  if rootdom0 == "dmu.edu"
-replace isApp = 0  if rootdom1 == "dmu.edu"
-replace isApp = 0  if rootdom2 == "dmu.edu"
+replace isApp = 0  if rootdom == "ctschicago.edu0"
+replace isApp = 0  if rootdom == "ctschicago.edu1"
+replace isApp = 0  if rootdom == "ctschicago.edu2"
 
 
-replace isApp = .o  if rootdom0 == "dom.edu"
-replace isApp = .o  if rootdom1 == "dom.edu"
-replace isApp = .o  if rootdom2 == "dom.edu"
 
 
-replace isApp = .o  if rootdom0 == "donnelly.edu"
-replace isApp = 0  if rootdom1 == "donnelly.edu"
-replace isApp = 0  if rootdom2 == "donnelly.edu"
+replace isApp = 0  if rootdom == "ctsfw.edu0"
+replace isApp = .o  if rootdom == "ctsfw.edu1"
+replace isApp = 0  if rootdom == "ctsfw.edu2"
 
 
-replace isApp = 1  if rootdom0 == "dordt.edu"
-replace isApp = 0  if rootdom1 == "dordt.edu"
-replace isApp = 0  if rootdom2 == "dordt.edu"
-replace CRIM_Inf18 = 1  if rootdom0 == "dordt.edu"
-replace HS_beh18   = 0  if rootdom0 == "dordt.edu"
-replace SEX18      = 0  if rootdom0 == "dordt.edu"
-replace COL_beh18  = 0  if rootdom0 == "dordt.edu"
-
-replace isApp = .o  if rootdom0 == "drake.edu"
-replace isApp = 0  if rootdom1 == "drake.edu"
-replace isApp = .o  if rootdom2 == "drake.edu"
-
-replace isApp = 0  if rootdom0 == "drakestate.edu"
-replace isApp = 0  if rootdom1 == "drakestate.edu"
-replace isApp = 0  if rootdom2 == "drakestate.edu"
 
 
-replace isApp = .o  if rootdom0 == "du.edu"
-replace isApp = .o  if rootdom1 == "du.edu"
-replace isApp = .o  if rootdom2 == "du.edu"
-
-replace isApp = 0  if rootdom0 == "dwci.edu"
-replace isApp = 0  if rootdom1 == "dwci.edu"
-replace isApp = 0  if rootdom2 == "dwci.edu"
+replace isApp = .o  if rootdom == "ctu.edu0"
+replace isApp = .o  if rootdom == "ctu.edu1"
+//Missing rootdom2"
 
 
-replace isApp = 1  if rootdom0 == "earlham.edu"
-replace isApp = 0  if rootdom1 == "earlham.edu"
-replace isApp = 0  if rootdom2 == "earlham.edu"
-replace CRIM_Inf18 = 0  if rootdom0 == "earlham.edu"
-replace HS_beh18   = 0  if rootdom0 == "earlham.edu"
-replace SEX18      = 0  if rootdom0 == "earlham.edu"
-replace COL_beh18  = 0  if rootdom0 == "earlham.edu"
-
-replace isApp = 0  if rootdom0 == "easternct.edu"
-replace isApp = 0  if rootdom1 == "easternct.edu"
-replace isApp = 1  if rootdom2 == "easternct.edu"
-replace CRIM_Inf18 = 1  if rootdom2 == "easternct.edu"
-replace HS_beh18   = 0  if rootdom2 == "easternct.edu"
-replace SEX18      = 0  if rootdom2 == "easternct.edu"
-replace COL_beh18  = 1  if rootdom2 == "easternct.edu"
-
-replace isApp = 0  if rootdom0 == "easternflorida.edu"
-replace isApp = 0  if rootdom1 == "easternflorida.edu"
-replace isApp = 1  if rootdom2 == "easternflorida.edu"
-replace CRIM_Inf18 = 0  if rootdom0 == "easternflorida.edu"
-replace HS_beh18   = 0  if rootdom0 == "easternflorida.edu"
-replace SEX18      = 0  if rootdom0 == "easternflorida.edu"
-replace COL_beh18  = 0  if rootdom0 == "easternflorida.edu"
-
-replace isApp = 0  if rootdom0 == "eastwest.edu"
-replace isApp = 0  if rootdom1 == "eastwest.edu"
-replace isApp = 0  if rootdom2 == "eastwest.edu"
 
 
-replace isApp = 1  if rootdom0 == "ec.edu"
-replace isApp = 1  if rootdom1 == "ec.edu"
-replace isApp = 1  if rootdom2 == "ec.edu"
-replace CRIM_Inf18 = 1  if rootdom0 == "ec.edu"
-replace HS_beh18   = 1  if rootdom0 == "ec.edu"
-replace SEX18      = 0  if rootdom0 == "ec.edu"
-replace COL_beh18  = 1  if rootdom0 == "ec.edu"
-replace CRIM_Inf18 = 1  if rootdom1 == "ec.edu"
-replace HS_beh18   = 1  if rootdom1 == "ec.edu"
-replace SEX18      = 0  if rootdom1 == "ec.edu"
-replace COL_beh18  = 1  if rootdom1 == "ec.edu"
-replace CRIM_Inf18 = 1  if rootdom2 == "ec.edu"
-replace HS_beh18   = 1  if rootdom2 == "ec.edu"
-replace SEX18      = 0  if rootdom2 == "ec.edu"
-replace COL_beh18  = 1  if rootdom2 == "ec.edu"
+replace isApp = .o  if rootdom == "cua.edu0"       // re admission application??0"
+replace isApp = .o  if rootdom == "template.edu1"  // second degree application??1"
+replace isApp = .o  if rootdom == "template.edu2"
 
-replace isApp = 1  if rootdom0 == "ecc.edu" // how to code name ecc or ecc.iavalley?
-replace isApp = 0  if rootdom1 == "template.edu"
 
-replace CRIM_Inf18 = 0  if rootdom0 == "template.edu"
-replace HS_beh18   = 0  if rootdom0 == "template.edu"
-replace SEX18      = 0  if rootdom0 == "template.edu"
-replace COL_beh18  = 0  if rootdom0 == "template.edu"
 
-replace isApp = 0  if rootdom0 == "eckerd.edu"
-replace isApp = 0  if rootdom1 == "eckerd.edu"
-replace isApp = 1  if rootdom2 == "eckerd.edu"
-replace CRIM_Inf18 = 1  if rootdom2 == "eckerd.edu"
-replace HS_beh18   = 1  if rootdom2 == "eckerd.edu"
-replace SEX18      = 0  if rootdom2 == "eckerd.edu"
-replace COL_beh18  = 1  if rootdom2 == "eckerd.edu"
+
+replace isApp = 1  if rootdom == "cv.edu0"
+replace isApp = 1  if rootdom == "cv.edu1"
+replace isApp = .o  if rootdom == "cv.edu2"
+replace CRIM_Inf18 = 0  if rootdom == "cv.edu0"
+replace HS_beh18   = 0  if rootdom == "cv.edu0"
+replace SEX18      = 0  if rootdom == "cv.edu0"
+replace COL_beh18  = 1  if rootdom == "cv.edu0"
+replace CRIM_Inf18 = 0  if rootdom == "cv.edu1"
+replace HS_beh18   = 0  if rootdom == "cv.edu1"
+replace SEX18      = 0  if rootdom == "cv.edu1"
+replace COL_beh18  = 1  if rootdom == "cv.edu1"
+
+
+replace isApp = .e  if rootdom == "dacc.edu0"
+replace isApp = .e  if rootdom == "dacc.edu1"
+replace isApp = .e  if rootdom == "dacc.edu2"
+
+
+replace isApp = 0  if rootdom == "darton.edu0"
+replace isApp = 0  if rootdom == "darton.edu1"
+
+
+
+
+replace isApp = .e  if rootdom == "daytona.edu0"
+replace isApp = .e  if rootdom == "daytona.edu1"
+replace isApp = .e  if rootdom == "daytona.edu2"
+
+
+
+
+replace isApp = 1  if rootdom == "DaytonaState.edu0"
+replace isApp = .o  if rootdom == "DaytonaState.edu1"
+replace isApp = 0  if rootdom == "DaytonaState.edu2"
+replace CRIM_Inf18 = 0  if rootdom == "DaytonaState.edu0"
+replace HS_beh18   = 0  if rootdom == "DaytonaState.edu0"
+replace SEX18      = 0  if rootdom == "DaytonaState.edu0"
+replace COL_beh18  = 0  if rootdom == "DaytonaState.edu0"
+
+
+replace isApp = 1  if rootdom == "dbq.edu0"
+replace isApp = 1  if rootdom == "dbq.edu1"
+replace isApp = 0  if rootdom == "dbq.edu2"
+replace CRIM_Inf18 = 1  if rootdom == "dbq.edu0"
+replace HS_beh18   = 1  if rootdom == "dbq.edu0"
+replace SEX18      = 0  if rootdom == "dbq.edu0"
+replace COL_beh18  = 1  if rootdom == "dbq.edu0"
+replace CRIM_Inf18 = 1  if rootdom == "dbq.edu1"
+replace HS_beh18   = 0  if rootdom == "dbq.edu1"
+replace SEX18      = 0  if rootdom == "dbq.edu1"
+replace COL_beh18  = 1  if rootdom == "dbq.edu1"
+
+
+replace isApp = 0  if rootdom == "dc3.edu0"
+replace isApp = 0  if rootdom == "dc3.edu1"
+replace isApp = 0  if rootdom == "dc3.edu2"
+
+
+replace isApp = .o  if rootdom == "depaul.edu0"
+replace isApp = 0  if rootdom == "depaul.edu1"
+replace isApp = 0  if rootdom == "depaul.edu2"
+
+
+
+
+replace isApp = 1  if rootdom == "depauw.edu0"
+replace isApp = .o  if rootdom == "depauw.edu1"
+replace isApp = 0  if rootdom == "depauw.edu2"
+replace CRIM_Inf18 = 1  if rootdom == "depauw.edu0"
+replace HS_beh18   = 1  if rootdom == "depauw.edu0"
+replace SEX18      = 0  if rootdom == "depauw.edu0"
+replace COL_beh18  = 1  if rootdom == "depauw.edu0"
+
+
+replace isApp = 0  if rootdom == "desu.edu0"
+replace isApp = 0  if rootdom == "desu.edu1"
+replace isApp = 0  if rootdom == "desu.edu2"
+
+
+
+
+replace isApp = .e  if rootdom == "dhs.edu0"
+replace isApp = .e  if rootdom == "dhs.edu1"
+replace isApp = .e  if rootdom == "dhs.edu2"
+
+
+
+
+replace isApp = .o  if rootdom == "dillard.edu0"
+replace isApp = 1  if rootdom == "dillard.edu1"
+replace isApp = 1  if rootdom == "dillard.edu2"
+replace CRIM_Inf18 = 1  if rootdom == "dillard.edu1"
+replace HS_beh18   = 0  if rootdom == "dillard.edu1"
+replace SEX18      = 0  if rootdom == "dillard.edu1"
+replace COL_beh18  = 1  if rootdom == "dillard.edu1"
+replace CRIM_Inf18 = 1  if rootdom == "dillard.edu2"
+replace HS_beh18   = 0  if rootdom == "dillard.edu2"
+replace SEX18      = 0  if rootdom == "dillard.edu2"
+replace COL_beh18  = 1  if rootdom == "dillard.edu2"
+
+
+
+
+replace isApp = 1  if rootdom == "dmacc.edu0"
+replace isApp = .o  if rootdom == "dmacc.edu1"
+replace isApp = 0  if rootdom == "dmacc.edu2"
+replace CRIM_Inf18 = 0  if rootdom == "dmacc.edu0"
+replace HS_beh18   = 0  if rootdom == "dmacc.edu0"
+replace SEX18      = 0  if rootdom == "dmacc.edu0"
+replace COL_beh18  = 0  if rootdom == "dmacc.edu0"
+
+
+replace isApp = 1  if rootdom == "dmtc.edu0"
+replace isApp = 0  if rootdom == "dmtc.edu1"
+replace isApp = 0  if rootdom == "dmtc.edu2"
+replace CRIM_Inf18 = 0  if rootdom == "dmtc.edu0"
+replace HS_beh18   = 0  if rootdom == "dmtc.edu0"
+replace SEX18      = 0  if rootdom == "dmtc.edu0"
+replace COL_beh18  = 0  if rootdom == "dmtc.edu0"
+
+
+replace isApp = 0  if rootdom == "dmu.edu0"
+replace isApp = 0  if rootdom == "dmu.edu1"
+replace isApp = 0  if rootdom == "dmu.edu2"
+
+
+
+
+replace isApp = .o  if rootdom == "dom.edu0"
+replace isApp = .o  if rootdom == "dom.edu1"
+replace isApp = .o  if rootdom == "dom.edu2"
+
+
+
+
+replace isApp = .o  if rootdom == "donnelly.edu0"
+replace isApp = 0  if rootdom == "donnelly.edu1"
+replace isApp = 0  if rootdom == "donnelly.edu2"
+
+
+
+
+replace isApp = 1  if rootdom == "dordt.edu0"
+replace isApp = 0  if rootdom == "dordt.edu1"
+replace isApp = 0  if rootdom == "dordt.edu2"
+replace CRIM_Inf18 = 1  if rootdom == "dordt.edu0"
+replace HS_beh18   = 0  if rootdom == "dordt.edu0"
+replace SEX18      = 0  if rootdom == "dordt.edu0"
+replace COL_beh18  = 0  if rootdom == "dordt.edu0"
+
+
+replace isApp = .o  if rootdom == "drake.edu0"
+replace isApp = 0  if rootdom == "drake.edu1"
+replace isApp = .o  if rootdom == "drake.edu2"
+
+
+replace isApp = 0  if rootdom == "drakestate.edu0"
+replace isApp = 0  if rootdom == "drakestate.edu1"
+replace isApp = 0  if rootdom == "drakestate.edu2"
+
+
+
+
+replace isApp = .o  if rootdom == "du.edu0"
+replace isApp = .o  if rootdom == "du.edu1"
+replace isApp = .o  if rootdom == "du.edu2"
+
+
+replace isApp = 0  if rootdom == "dwci.edu0"
+replace isApp = 0  if rootdom == "dwci.edu1"
+replace isApp = 0  if rootdom == "dwci.edu2"
+
+
+
+
+replace isApp = 1  if rootdom == "earlham.edu0"
+replace isApp = 0  if rootdom == "earlham.edu1"
+replace isApp = 0  if rootdom == "earlham.edu2"
+replace CRIM_Inf18 = 0  if rootdom == "earlham.edu0"
+replace HS_beh18   = 0  if rootdom == "earlham.edu0"
+replace SEX18      = 0  if rootdom == "earlham.edu0"
+replace COL_beh18  = 0  if rootdom == "earlham.edu0"
+
+
+replace isApp = 0  if rootdom == "easternct.edu0"
+replace isApp = 0  if rootdom == "easternct.edu1"
+replace isApp = 1  if rootdom == "easternct.edu2"
+replace CRIM_Inf18 = 1  if rootdom == "easternct.edu2"
+replace HS_beh18   = 0  if rootdom == "easternct.edu2"
+replace SEX18      = 0  if rootdom == "easternct.edu2"
+replace COL_beh18  = 1  if rootdom == "easternct.edu2"
+
+
+replace isApp = 0  if rootdom == "easternflorida.edu0"
+replace isApp = 0  if rootdom == "easternflorida.edu1"
+replace isApp = 1  if rootdom == "easternflorida.edu2"
+replace CRIM_Inf18 = 0  if rootdom == "easternflorida.edu0"
+replace HS_beh18   = 0  if rootdom == "easternflorida.edu0"
+replace SEX18      = 0  if rootdom == "easternflorida.edu0"
+replace COL_beh18  = 0  if rootdom == "easternflorida.edu0"
+
+
+replace isApp = 0  if rootdom == "eastwest.edu0"
+replace isApp = 0  if rootdom == "eastwest.edu1"
+replace isApp = 0  if rootdom == "eastwest.edu2"
+
+
+
+
+replace isApp = 1  if rootdom == "ec.edu0"
+replace isApp = 1  if rootdom == "ec.edu1"
+replace isApp = 1  if rootdom == "ec.edu2"
+replace CRIM_Inf18 = 1  if rootdom == "ec.edu0"
+replace HS_beh18   = 1  if rootdom == "ec.edu0"
+replace SEX18      = 0  if rootdom == "ec.edu0"
+replace COL_beh18  = 1  if rootdom == "ec.edu0"
+replace CRIM_Inf18 = 1  if rootdom == "ec.edu1"
+replace HS_beh18   = 1  if rootdom == "ec.edu1"
+replace SEX18      = 0  if rootdom == "ec.edu1"
+replace COL_beh18  = 1  if rootdom == "ec.edu1"
+replace CRIM_Inf18 = 1  if rootdom == "ec.edu2"
+replace HS_beh18   = 1  if rootdom == "ec.edu2"
+replace SEX18      = 0  if rootdom == "ec.edu2"
+replace COL_beh18  = 1  if rootdom == "ec.edu2"
+
+
+replace isApp = 1  if rootdom == "ecc.edu" // how to code name ecc or ecc.iavalley?0"
+replace isApp = 0  if rootdom == "template.edu1"
+
+
+replace CRIM_Inf18 = 0  if rootdom == "template.edu0"
+replace HS_beh18   = 0  if rootdom == "template.edu0"
+replace SEX18      = 0  if rootdom == "template.edu0"
+replace COL_beh18  = 0  if rootdom == "template.edu0"
+
+
+replace isApp = 0  if rootdom == "eckerd.edu0"
+replace isApp = 0  if rootdom == "eckerd.edu1"
+replace isApp = 1  if rootdom == "eckerd.edu2"
+replace CRIM_Inf18 = 1  if rootdom == "eckerd.edu2"
+replace HS_beh18   = 1  if rootdom == "eckerd.edu2"
+replace SEX18      = 0  if rootdom == "eckerd.edu2"
+replace COL_beh18  = 1  if rootdom == "eckerd.edu2"
+
 
 //missing
-replace isApp = 0  if rootdom1 == "ega.edu"
-replace isApp = 0  if rootdom2 == "ega.edu"
 
-replace isApp = 0  if rootdom0 == "eicc.edu"
-replace isApp = 0  if rootdom1 == "eicc.edu"
-replace isApp = .o  if rootdom2 == "eicc.edu"
+replace isApp = 0  if rootdom == "ega.edu1"
+replace isApp = 0  if rootdom == "ega.edu2"
 
 
-replace isApp = 1  if rootdom0 == "eitc.edu"
-replace isApp = 1  if rootdom1 == "eitc.edu"
-replace isApp = 0  if rootdom2 == "eitc.edu"
-replace CRIM_Inf18 = 0  if rootdom0 == "eitc.edu"
-replace HS_beh18   = 0  if rootdom0 == "eitc.edu"
-replace SEX18      = 0  if rootdom0 == "eitc.edu"
-replace COL_beh18  = 0  if rootdom0 == "eitc.edu"
-replace CRIM_Inf18 = 0  if rootdom1 == "eitc.edu"
-replace HS_beh18   = 0  if rootdom1 == "eitc.edu"
-replace SEX18      = 0  if rootdom1 == "eitc.edu"
-replace COL_beh18  = 0  if rootdom1 == "eitc.edu"
-
-replace isApp = 1  if rootdom0 == "eiu.edu"
-replace isApp = .o  if rootdom1 == "eiu.edu"
-replace isApp = .o  if rootdom2 == "eiu.edu"
-replace CRIM_Inf18 = 1  if rootdom0 == "eiu.edu"
-replace HS_beh18   = 0  if rootdom0 == "eiu.edu"
-replace SEX18      = 0  if rootdom0 == "eiu.edu"
-replace COL_beh18  = 0  if rootdom0 == "eiu.edu"
-
-replace isApp = .n  if rootdom0 == "eku.edu" // application update??
-replace isApp = 1  if rootdom1 == "template.edu"
-replace isApp = 0  if rootdom2 == "template.edu"
-replace CRIM_Inf18 = __  if rootdom0 == "template.edu"
-replace HS_beh18   = __  if rootdom0 == "template.edu"
-replace SEX18      = __  if rootdom0 == "template.edu"
-replace COL_beh18  = __  if rootdom0 == "template.edu"
-
-replace isApp = 0  if rootdom0 == "elgin.edu"
-replace isApp = 0  if rootdom1 == "elgin.edu"
-replace isApp = 0  if rootdom2 == "elgin.edu"
+replace isApp = 0  if rootdom == "eicc.edu0"
+replace isApp = 0  if rootdom == "eicc.edu1"
+replace isApp = .o  if rootdom == "eicc.edu2"
 
 
-replace isApp = 1  if rootdom0 == "elizabethtown.kcts.edu" // naming convention
-replace isApp = 0  if rootdom1 == "template.edu"
-replace isApp = 0  if rootdom2 == "template.edu"
-replace CRIM_Inf18 = 0  if rootdom0 == "template.edu"
-replace HS_beh18   = 0  if rootdom0 == "template.edu"
-replace SEX18      = 0  if rootdom0 == "template.edu"
-replace COL_beh18  = 0  if rootdom0 == "template.edu"
-
-replace isApp = 0  if rootdom0 == "elmhurst.edu"
-replace isApp = 0  if rootdom1 == "elmhurst.edu"
-replace isApp = 1  if rootdom2 == "elmhurst.edu"
-replace CRIM_Inf18 = 0  if rootdom2 == "elmhurst.edu"
-replace HS_beh18   = 0  if rootdom2 == "elmhurst.edu"
-replace SEX18      = 0  if rootdom2 == "elmhurst.edu"
-replace COL_beh18  = 0  if rootdom2 == "elmhurst.edu"
-
-replace isApp = 1  if rootdom0 == "emcc.edu"
-replace isApp = .o  if rootdom1 == "emcc.edu"
-replace isApp = 0  if rootdom2 == "emcc.edu"
-replace CRIM_Inf18 = 0  if rootdom0 == "emcc.edu"
-replace HS_beh18   = 0  if rootdom0 == "emcc.edu"
-replace SEX18      = 0  if rootdom0 == "emcc.edu"
-replace COL_beh18  = 0  if rootdom0 == "emcc.edu"
-
-replace isApp = 0  if rootdom0 == "emmaus.edu"
-replace isApp = 0  if rootdom1 == "emmaus.edu"
-replace isApp = 0  if rootdom2 == "emmaus.edu"
 
 
-replace isApp = 0  if rootdom0 == "emory.edu"
-replace isApp = .o  if rootdom1 == "emory.edu"
-replace isApp = .o  if rootdom2 == "emory.edu"
+replace isApp = 1  if rootdom == "eitc.edu0"
+replace isApp = 1  if rootdom == "eitc.edu1"
+replace isApp = 0  if rootdom == "eitc.edu2"
+replace CRIM_Inf18 = 0  if rootdom == "eitc.edu0"
+replace HS_beh18   = 0  if rootdom == "eitc.edu0"
+replace SEX18      = 0  if rootdom == "eitc.edu0"
+replace COL_beh18  = 0  if rootdom == "eitc.edu0"
+replace CRIM_Inf18 = 0  if rootdom == "eitc.edu1"
+replace HS_beh18   = 0  if rootdom == "eitc.edu1"
+replace SEX18      = 0  if rootdom == "eitc.edu1"
+replace COL_beh18  = 0  if rootdom == "eitc.edu1"
 
 
-replace isApp = 1  if rootdom0 == "emporia.edu"
-replace isApp = 0  if rootdom1 == "emporia.edu"
-replace isApp = .o  if rootdom2 == "emporia.edu"
-replace CRIM_Inf18 = 0  if rootdom0 == "emporia.edu"
-replace HS_beh18   = 0  if rootdom0 == "emporia.edu"
-replace SEX18      = 0  if rootdom0 == "emporia.edu"
-replace COL_beh18  = 0  if rootdom0 == "emporia.edu"
-
-replace isApp = 1  if rootdom0 == "escc.edu"
-replace isApp = 0  if rootdom1 == "escc.edu"
-replace isApp = 0  if rootdom2 == "escc.edu"
-replace CRIM_Inf18 = 0  if rootdom0 == "escc.edu"
-replace HS_beh18   = 0  if rootdom0 == "escc.edu"
-replace SEX18      = 0  if rootdom0 == "escc.edu"
-replace COL_beh18  = 1  if rootdom0 == "escc.edu"
-
-replace isApp = .e  if rootdom0 == "eureka.edu"
-replace isApp = .e  if rootdom1 == "eureka.edu"
-replace isApp = .e  if rootdom2 == "eureka.edu"
+replace isApp = 1  if rootdom == "eiu.edu0"
+replace isApp = .o  if rootdom == "eiu.edu1"
+replace isApp = .o  if rootdom == "eiu.edu2"
+replace CRIM_Inf18 = 1  if rootdom == "eiu.edu0"
+replace HS_beh18   = 0  if rootdom == "eiu.edu0"
+replace SEX18      = 0  if rootdom == "eiu.edu0"
+replace COL_beh18  = 0  if rootdom == "eiu.edu0"
 
 
-replace isApp = 1  if rootdom0 == "evansville.edu"
-replace isApp = .o  if rootdom1 == "template.edu"
-replace isApp = 0  if rootdom2 == "template.edu"
-replace CRIM_Inf18 = .n  if rootdom0 == "template.edu" 
-replace HS_beh18   = __  if rootdom0 == "template.edu"
-replace SEX18      = __  if rootdom0 == "template.edu"
-replace COL_beh18  = 1  if rootdom0 == "template.edu"
-
-replace isApp = .o  if rootdom0 == "ewc.edu"
-replace isApp = 0  if rootdom1 == "ewc.edu"
-replace isApp = 0  if rootdom2 == "ewc.edu"
+replace isApp = .n  if rootdom == "eku.edu" // application update??0"
+replace isApp = 1  if rootdom == "template.edu1"
+replace isApp = 0  if rootdom == "template.edu2"
+replace CRIM_Inf18 = __  if rootdom == "template.edu0"
+replace HS_beh18   = __  if rootdom == "template.edu0"
+replace SEX18      = __  if rootdom == "template.edu0"
+replace COL_beh18  = __  if rootdom == "template.edu0"
 
 
-replace isApp = __  if rootdom0 == "template.edu"
-replace isApp = __  if rootdom1 == "template.edu"
-replace isApp = __  if rootdom2 == "template.edu"
-replace CRIM_Inf18 = __  if rootdom0 == "template.edu"
-replace HS_beh18   = __  if rootdom0 == "template.edu"
-replace SEX18      = __  if rootdom0 == "template.edu"
-replace COL_beh18  = __  if rootdom0 == "template.edu"
+replace isApp = 0  if rootdom == "elgin.edu0"
+replace isApp = 0  if rootdom == "elgin.edu1"
+replace isApp = 0  if rootdom == "elgin.edu2"
 
-replace isApp = __  if rootdom0 == "template.edu"
-replace isApp = __  if rootdom1 == "template.edu"
-replace isApp = __  if rootdom2 == "template.edu"
-replace CRIM_Inf18 = __  if rootdom0 == "template.edu"
-replace HS_beh18   = __  if rootdom0 == "template.edu"
-replace SEX18      = __  if rootdom0 == "template.edu"
-replace COL_beh18  = __  if rootdom0 == "template.edu"
 
-replace isApp = __  if rootdom0 == "template.edu"
-replace isApp = __  if rootdom1 == "template.edu"
-replace isApp = __  if rootdom2 == "template.edu"
-replace CRIM_Inf18 = __  if rootdom0 == "template.edu"
-replace HS_beh18   = __  if rootdom0 == "template.edu"
-replace SEX18      = __  if rootdom0 == "template.edu"
-replace COL_beh18  = __  if rootdom0 == "template.edu"
+
+
+replace isApp = 1  if rootdom == "elizabethtown.kcts.edu" // naming convention0"
+replace isApp = 0  if rootdom == "template.edu1"
+replace isApp = 0  if rootdom == "template.edu2"
+replace CRIM_Inf18 = 0  if rootdom == "template.edu0"
+replace HS_beh18   = 0  if rootdom == "template.edu0"
+replace SEX18      = 0  if rootdom == "template.edu0"
+replace COL_beh18  = 0  if rootdom == "template.edu0"
+
+
+replace isApp = 0  if rootdom == "elmhurst.edu0"
+replace isApp = 0  if rootdom == "elmhurst.edu1"
+replace isApp = 1  if rootdom == "elmhurst.edu2"
+replace CRIM_Inf18 = 0  if rootdom == "elmhurst.edu2"
+replace HS_beh18   = 0  if rootdom == "elmhurst.edu2"
+replace SEX18      = 0  if rootdom == "elmhurst.edu2"
+replace COL_beh18  = 0  if rootdom == "elmhurst.edu2"
+
+
+replace isApp = 1  if rootdom == "emcc.edu0"
+replace isApp = .o  if rootdom == "emcc.edu1"
+replace isApp = 0  if rootdom == "emcc.edu2"
+replace CRIM_Inf18 = 0  if rootdom == "emcc.edu0"
+replace HS_beh18   = 0  if rootdom == "emcc.edu0"
+replace SEX18      = 0  if rootdom == "emcc.edu0"
+replace COL_beh18  = 0  if rootdom == "emcc.edu0"
+
+
+replace isApp = 0  if rootdom == "emmaus.edu0"
+replace isApp = 0  if rootdom == "emmaus.edu1"
+replace isApp = 0  if rootdom == "emmaus.edu2"
+
+
+
+
+replace isApp = 0  if rootdom == "emory.edu0"
+replace isApp = .o  if rootdom == "emory.edu1"
+replace isApp = .o  if rootdom == "emory.edu2"
+
+
+
+
+replace isApp = 1  if rootdom == "emporia.edu0"
+replace isApp = 0  if rootdom == "emporia.edu1"
+replace isApp = .o  if rootdom == "emporia.edu2"
+replace CRIM_Inf18 = 0  if rootdom == "emporia.edu0"
+replace HS_beh18   = 0  if rootdom == "emporia.edu0"
+replace SEX18      = 0  if rootdom == "emporia.edu0"
+replace COL_beh18  = 0  if rootdom == "emporia.edu0"
+
+
+replace isApp = 1  if rootdom == "escc.edu0"
+replace isApp = 0  if rootdom == "escc.edu1"
+replace isApp = 0  if rootdom == "escc.edu2"
+replace CRIM_Inf18 = 0  if rootdom == "escc.edu0"
+replace HS_beh18   = 0  if rootdom == "escc.edu0"
+replace SEX18      = 0  if rootdom == "escc.edu0"
+replace COL_beh18  = 1  if rootdom == "escc.edu0"
+
+
+replace isApp = .e  if rootdom == "eureka.edu0"
+replace isApp = .e  if rootdom == "eureka.edu1"
+replace isApp = .e  if rootdom == "eureka.edu2"
+
+
+
+
+replace isApp = 1  if rootdom == "evansville.edu0"
+replace isApp = .o  if rootdom == "template.edu1"
+replace isApp = 0  if rootdom == "template.edu2"
+replace CRIM_Inf18 = .n  if rootdom == "template.edu" 0"
+replace HS_beh18   = __  if rootdom == "template.edu0"
+replace SEX18      = __  if rootdom == "template.edu0"
+replace COL_beh18  = 1  if rootdom == "template.edu0"
+
+
+replace isApp = .o  if rootdom == "ewc.edu0"
+replace isApp = 0  if rootdom == "ewc.edu1"
+replace isApp = 0  if rootdom == "ewc.edu2"
+
+
+
+
+replace isApp = __  if rootdom == "template.edu0"
+replace isApp = __  if rootdom == "template.edu1"
+replace isApp = __  if rootdom == "template.edu2"
+replace CRIM_Inf18 = __  if rootdom == "template.edu0"
+replace HS_beh18   = __  if rootdom == "template.edu0"
+replace SEX18      = __  if rootdom == "template.edu0"
+replace COL_beh18  = __  if rootdom == "template.edu0"
+
+
+replace isApp = __  if rootdom == "template.edu0"
+replace isApp = __  if rootdom == "template.edu1"
+replace isApp = __  if rootdom == "template.edu2"
+replace CRIM_Inf18 = __  if rootdom == "template.edu0"
+replace HS_beh18   = __  if rootdom == "template.edu0"
+replace SEX18      = __  if rootdom == "template.edu0"
+replace COL_beh18  = __  if rootdom == "template.edu0"
+
+
+replace isApp = __  if rootdom == "template.edu0"
+replace isApp = __  if rootdom == "template.edu1"
+replace isApp = __  if rootdom == "template.edu2"
+replace CRIM_Inf18 = __  if rootdom == "template.edu0"
+replace HS_beh18   = __  if rootdom == "template.edu0"
+replace SEX18      = __  if rootdom == "template.edu0"
+replace COL_beh18  = __  if rootdom == "template.edu0"
+
+
+
 
 
 
