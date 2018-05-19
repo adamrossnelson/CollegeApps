@@ -11,8 +11,8 @@ Repo to support research related to college applications.
 
 **Processing data**
 
-* `ColAppTextProcDemo.ipynb` - Notebook that pre-processes text data scraped by `ColAppScrape.jpynb`.
-* `ColAppTextProcDemo.ipynb` - Notebook that provides a prototype for `ColAppTextProcDemo.ipynb`.
+* `ColAppTextProc.ipynb` - Notebook that pre-processes text data scraped by `ColAppScrape.jpynb`.
+* `ColAppTextProcDemo.ipynb` - Notebook that provides a prototype for `ColAppTextProc.ipynb`.
 
 **Testing data**
 
