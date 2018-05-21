@@ -30,6 +30,7 @@ gen COL_beh18 = . */
 
 
 import delimited aaa_appcodestarter.csv, varnames(1) clear
+duplicates drop webindx, force
 replace webindx = subinstr(webindx," ","",.)
 drop if webindx == ""
 replace webindx = lower(webindx)
