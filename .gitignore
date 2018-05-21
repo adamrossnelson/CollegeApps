@@ -4,5 +4,6 @@
 *.pdf
 *.log
 *.csv
+*.dta
 pdfs/*.pdf
 geckodriver.log
