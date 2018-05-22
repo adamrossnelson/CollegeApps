@@ -27,6 +27,32 @@ gen COL_beh18 = . */
 // is a question that asks generally about BH (which could, even if 
 // ambigously, could apply to college) we code college as a true (1).
 
+
+import delimited aaa_appcodestarter.csv, varnames(1) clear
+replace webindx = subinstr(webindx," ","",.)
+drop if webindx == ""
+replace webindx = lower(webindx)
+replace webindx = subinstr(webindx,".","",1) if strpos(webindx,".") == 1
+expand 3
+sort webindx
+list in 1/10
+
+capture gen id = .
+forvalues i = 1(3)`=_N' {
+	forvalues t = 0/2 {
+		qui replace id = `t' if _n == `i' + `t'
+	}
+}
+gen rootdom = webindx + string(id)
+list in 1/12, sep(0)
+
+gen isApp = .
+gen CRIM_Inf18 = .
+gen HS_beh18 = .
+gen SEX18 = .
+gen COL_beh18 = .
+
+
 replace isApp = 1  if rootdom == "aacc.edu0"
 replace isApp = 0  if rootdom == "aacc.edu1"
 replace isApp = .o if rootdom == "aacc.edu2"
@@ -345,7 +371,7 @@ replace isApp = 1  if rootdom == "barry.edu0"
 replace isApp = 0  if rootdom == "barry.edu1"
 // didn't have rootdom2"
 replace CRIM_Inf18 = 1  if rootdom == "barry.edu0"
-replace HS_beh18   = 1  if rootdom == "barry.edu"  // Ask Adam about "have you been disciplined by a student/faculty judicial board for misconduct?0"
+replace HS_beh18   = 1  if rootdom == "barry.edu0"  // Ask Adam about "have you been disciplined by a student/faculty judicial board for misconduct?
 replace SEX18      = 0  if rootdom == "barry.edu0"
 replace COL_beh18  = 1  if rootdom == "barry.edu0"
 
@@ -379,7 +405,7 @@ replace HS_beh18   = 1  if rootdom == "bellarmine.edu0"
 replace SEX18      = 0  if rootdom == "bellarmine.edu0"
 replace COL_beh18  = 1  if rootdom == "bellarmine.edu0"
 
-
+/*
 replace isApp = __  if rootdom == "ben.edu0"
 replace isApp = __  if rootdom == "ben.edu1"
 replace isApp = __  if rootdom == "ben.edu2"
@@ -387,6 +413,7 @@ replace CRIM_Inf18 = __  if rootdom == "ben.edu0"
 replace HS_beh18   = __  if rootdom == "ben.edu0"
 replace SEX18      = __  if rootdom == "ben.edu0"
 replace COL_beh18  = __  if rootdom == "ben.edu0"
+*/
 
 
 replace isApp = .o  if rootdom == "benedictine.edu0"
@@ -650,11 +677,11 @@ replace COL_beh18  = 0  if rootdom == "captechu.edu0"
 replace isApp = 1  if rootdom == "carver.edu0"
 replace isApp = 1  if rootdom == "carver.edu1"
 replace isApp = 0  if rootdom == "carver.edu2"
-replace CRIM_Inf18 = 1  if rootdom == "carver.edu0" // 0"
+replace CRIM_Inf18 = 1  if rootdom == "carver.edu0" 
 replace HS_beh18   = 1  if rootdom == "carver.edu0"
 replace SEX18      = 0  if rootdom == "carver.edu0"
 replace COL_beh18  = 1  if rootdom == "carver.edu0"
-replace CRIM_Inf18 = 1  if rootdom == "carver.edu1" // 1"
+replace CRIM_Inf18 = 1  if rootdom == "carver.edu1" 
 replace HS_beh18   = 1  if rootdom == "carver.edu1"
 replace SEX18      = 0  if rootdom == "carver.edu1"
 replace COL_beh18  = 1  if rootdom == "carver.edu1"
@@ -1099,8 +1126,8 @@ replace isApp = .o  if rootdom == "ctu.edu1"
 
 
 
-replace isApp = .o  if rootdom == "cua.edu" 0"
-replace isApp = .o  if rootdom == "cua.edu" 1"
+replace isApp = .o  if rootdom == "cua.edu0"
+replace isApp = .o  if rootdom == "cua.edu1"
 replace isApp = .o  if rootdom == "cua.edu2"
 
 
@@ -1332,7 +1359,7 @@ replace SEX18      = 0  if rootdom == "ec.edu2"
 replace COL_beh18  = 1  if rootdom == "ec.edu2"
 
 
-replace isApp = 1  if rootdom == "ecc.iavalley.edu" // how to code name ecc or ecc.iavalley?0"
+replace isApp = 1  if rootdom == "ecc.iavalley.edu0" // how to code name ecc or ecc.iavalley?
 replace isApp = 0  if rootdom == "ecc.iavalley.edu1"
 replace CRIM_Inf18 = 0  if rootdom == "ecc.iavalley.edu0"
 replace HS_beh18   = 0  if rootdom == "ecc.iavalley.edu0"
@@ -1386,13 +1413,13 @@ replace SEX18      = 0  if rootdom == "eiu.edu0"
 replace COL_beh18  = 0  if rootdom == "eiu.edu0"
 
 
-replace isApp = .o  if rootdom == "eku.edu" // application update form0"
-replace isApp = 1  if rootdom == "eku.edu" 1"
-replace isApp = 0  if rootdom == "eku.edu" 2"
-replace CRIM_Inf18 = 0  if rootdom == "eku.edu" 1"
-replace HS_beh18   = 0  if rootdom == "eku.edu" 1"
-replace SEX18      = 0  if rootdom == "eku.edu" 1"
-replace COL_beh18  = 0  if rootdom == "eku.edu" 1"
+replace isApp = .o  if rootdom == "eku.edu0" // application update form0"
+replace isApp = 1  if rootdom == "eku.edu1"
+replace isApp = 0  if rootdom == "eku.edu2"
+replace CRIM_Inf18 = 0  if rootdom == "eku.edu1"
+replace HS_beh18   = 0  if rootdom == "eku.edu1"
+replace SEX18      = 0  if rootdom == "eku.edu1"
+replace COL_beh18  = 0  if rootdom == "eku.edu1"
 
 
 replace isApp = 0  if rootdom == "elgin.edu0"
@@ -1402,7 +1429,7 @@ replace isApp = 0  if rootdom == "elgin.edu2"
 
 
 
-replace isApp = 1  if rootdom == "elizabethtown.kctcs.edu" 0"
+replace isApp = 1  if rootdom == "elizabethtown.kctcs.edu0"
 replace isApp = 0  if rootdom == "elizabethtown.kctcs.edu1"
 replace isApp = 0  if rootdom == "elizabethtown.kctcs.edu2"
 replace CRIM_Inf18 = 0  if rootdom == "elizabethtown.kctcs.edu0"
@@ -1469,7 +1496,7 @@ replace isApp = .e  if rootdom == "eureka.edu2"
 
 
 replace isApp = 1  if rootdom == "evansville.edu0"
-replace isApp = .o  if rootdom == "evansville.edu" // Master of Public Health application 1"
+replace isApp = .o  if rootdom == "evansville.edu1" // Master of Public Health application 
 replace isApp = 0  if rootdom == "evansville.edu2"
 replace CRIM_Inf18 = 0  if rootdom == "evansville.edu0"
 replace HS_beh18   = 0  if rootdom == "evansville.edu0"
@@ -1615,11 +1642,11 @@ replace isApp = 0  if rootdom == "fortlewis.edu2"
 replace CRIM_Inf18 = 1  if rootdom == "fortlewis.edu0"
 replace HS_beh18   = 0  if rootdom == "fortlewis.edu0"
 replace SEX18      = 1  if rootdom == "fortlewis.edu0"
-replace COL_beh18  = .n  if rootdom == "fortlewis.edu"//are you eligible to return to all previous institutions?0"
+replace COL_beh18  = .n  if rootdom == "fortlewis.edu0" //are you eligible to return to all previous institutions?
 replace CRIM_Inf18 = 1  if rootdom == "fortlewis.edu1"
 replace HS_beh18   = 0  if rootdom == "fortlewis.edu1"
 replace SEX18      = 1  if rootdom == "fortlewis.edu1"
-replace COL_beh18  = .n  if rootdom == "fortlewis.edu"//are you eligible to return to all previous institutions?1"
+replace COL_beh18  = .n  if rootdom == "fortlewis.edu1" //are you eligible to return to all previous institutions?
 
 
 
@@ -1791,7 +1818,7 @@ replace isApp = .o  if rootdom == "georgetown.edu2"
 
 
 
-replace isApp = .o  if rootdom == "georgetowncollege.edu"// graduate application 0"
+replace isApp = .o  if rootdom == "georgetowncollege.edu0" // graduate application 
 replace isApp = 0  if rootdom == "georgetowncollege.edu1"
 //Missing rootdom2"
 
@@ -1814,8 +1841,8 @@ replace SEX18      = 0  if rootdom == "gntc.edu1"
 replace COL_beh18  = 0  if rootdom == "gntc.edu1"
 
 
-replace isApp = .o  if rootdom == "goodwin.edu"// Nursing app0"
-replace isApp = .o  if rootdom == "goodwin.edu" // Associates degree for Vision Care Tech program 1"
+replace isApp = .o  if rootdom == "goodwin.edu0" // Nursing app
+replace isApp = .o  if rootdom == "goodwin.edu1" // Associates degree for Vision Care Tech program 
 replace isApp = 0  if rootdom == "goodwin.edu2"
 
 
@@ -1823,7 +1850,7 @@ replace isApp = 0  if rootdom == "goodwin.edu2"
 
 replace isApp = 1  if rootdom == "gordonstate.edu0"
 replace isApp = 1  if rootdom == "gordonstate.edu1"
-replace isApp = .o  if rootdom == "gordonstate.edu"// Nursing app2"
+replace isApp = .o  if rootdom == "gordonstate.edu2" // Nursing app
 replace CRIM_Inf18 = 1  if rootdom == "gordonstate.edu0"
 replace HS_beh18   = 0  if rootdom == "gordonstate.edu0"
 replace SEX18      = 0  if rootdom == "gordonstate.edu0"
@@ -1836,7 +1863,7 @@ replace COL_beh18  = 0  if rootdom == "gordonstate.edu1"
 
 replace isApp = 1  if rootdom == "goshen.edu0"
 replace isApp = 0  if rootdom == "goshen.edu1"
-replace isApp = .o  if rootdom == "goshen.edu" // Leadership application 2"
+replace isApp = .o  if rootdom == "goshen.edu2" // Leadership application
 replace CRIM_Inf18 = 1  if rootdom == "goshen.edu0"
 replace HS_beh18   = 0  if rootdom == "goshen.edu0"
 replace SEX18      = 0  if rootdom == "goshen.edu0"
@@ -1851,7 +1878,7 @@ replace isApp = 0  if rootdom == "goucher.edu2"
 
 
 replace isApp = 1  if rootdom == "govst.edu0"
-replace isApp = .o  if rootdom == "govst.edu" // Graduate application 1"
+replace isApp = .o  if rootdom == "govst.edu1" // Graduate application 
 replace isApp = 0  if rootdom == "govst.edu2"
 replace CRIM_Inf18 = 1  if rootdom == "govst.edu0"
 replace HS_beh18   = 1  if rootdom == "govst.edu0"
@@ -1859,27 +1886,27 @@ replace SEX18      = 0  if rootdom == "govst.edu0"
 replace COL_beh18  = 1  if rootdom == "govst.edu0"
 
 
-replace isApp = .o  if rootdom == "grace.edu" // Master of Art app0"
+replace isApp = .o  if rootdom == "grace.edu0" // Master of Art app
 replace isApp = .e  if rootdom == "grace.edu1"
 replace isApp = .e  if rootdom == "grace.edu2"
 
 
 
 
-replace isApp = .o  if rootdom == "graceland.edu" // Scholarship app0"
-replace isApp = .o  if rootdom == "graceland.edu" // Scholarship app1"
-replace isApp = .o  if rootdom == "graceland.edu" // Nursing app2"
+replace isApp = .o  if rootdom == "graceland.edu0" // Scholarship app
+replace isApp = .o  if rootdom == "graceland.edu1" // Scholarship app
+replace isApp = .o  if rootdom == "graceland.edu2" // Nursing app
 
 
 
 
-replace isApp = .o  if rootdom == "grahamschoolofnursing.org.edu" // Scholarship app 0"
+replace isApp = .o  if rootdom == "grahamschoolofnursing.org.edu0" // Scholarship app 
 replace isApp = 0  if rootdom == "grahamschoolofnursing.org.edu1"
 // Missing rootdom2"
 
 
 replace isApp = 0  if rootdom == "gram.edu0"
-replace isApp = .o  if rootdom == "gram.edu" // Certificat program app1"
+replace isApp = .o  if rootdom == "gram.edu1" // Certificat program app
 // Missing rootdom2"
 
 
@@ -1897,21 +1924,21 @@ replace isApp = 0  if rootdom == "greenville.edu2"
 
 
 
-replace isApp = .o  if rootdom == "grinnell.edu" // off-campus program app0"
+replace isApp = .o  if rootdom == "grinnell.edu0" // off-campus program app
 replace isApp = 0  if rootdom == "grinnell.edu1"
 replace isApp = 0  if rootdom == "grinnell.edu2"
 
 
-replace isApp = .o  if rootdom == "gsu.edu" //IEP program app0"
-replace isApp = .o  if rootdom == "gsu.edu" // App for summer training program1"
-replace isApp = .o  if rootdom == "gsu.edu" //IEP program app2"
+replace isApp = .o  if rootdom == "gsu.edu0" //IEP program app
+replace isApp = .o  if rootdom == "gsu.edu1" // App for summer training program
+replace isApp = .o  if rootdom == "gsu.edu2" //IEP program app
 
 
 
 
 replace isApp = 1  if rootdom == "gsw.edu0"
-replace isApp = .o  if rootdom == "gsw.edu" // Nursing app1"
-replace isApp = .o  if rootdom == "gsw.edu" // Nursing app 2"
+replace isApp = .o  if rootdom == "gsw.edu1" // Nursing app
+replace isApp = .o  if rootdom == "gsw.edu2" // Nursing app 
 replace CRIM_Inf18 = 1  if rootdom == "gsw.edu0"
 replace HS_beh18   = 1  if rootdom == "gsw.edu0"
 replace SEX18      = 0  if rootdom == "gsw.edu0"
@@ -1927,23 +1954,23 @@ replace SEX18      = 0  if rootdom == "GwinnettTech.edu0"
 replace COL_beh18  = 0  if rootdom == "GwinnettTech.edu0"
 
 
-replace isApp = .o  if rootdom == "gwu.edu" //International application 0"
-replace isApp = .o  if rootdom == "gwu.edu" // Law school application 1"
-replace isApp = 0  if rootdom == "gwu.edu" 2"
+replace isApp = .o  if rootdom == "gwu.edu0" //International application 
+replace isApp = .o  if rootdom == "gwu.edu1" // Law school application 
+replace isApp = 0  if rootdom == "gwu.edu2"
 
 
 
 
-replace isApp = .o  if rootdom == "hagerstowncc.edu" //transfer application 0"
+replace isApp = .o  if rootdom == "hagerstowncc.edu0" //transfer application 
 replace isApp = .e  if rootdom == "hagerstowncc.edu1"
-replace isApp = .o  if rootdom == "hagerstowncc.edu" // dual admissions 2"
+replace isApp = .o  if rootdom == "hagerstowncc.edu2" // dual admissions 
 
 
 
 
 replace isApp = 1  if rootdom == "hanover.edu0"
-replace isApp = .o  if rootdom == "hanover.edu"// FAFSA application 1"
-replace isApp = .o  if rootdom == "hanover.edu"// International application 2"
+replace isApp = .o  if rootdom == "hanover.edu1" // FAFSA application 
+replace isApp = .o  if rootdom == "hanover.edu2" // International application 
 replace CRIM_Inf18 = 1  if rootdom == "hanover.edu0"
 replace HS_beh18   = 1  if rootdom == "hanover.edu0"
 replace SEX18      = 0  if rootdom == "hanover.edu0"
@@ -1951,8 +1978,8 @@ replace COL_beh18  = 1  if rootdom == "hanover.edu0"
 
 
 replace isApp = 1  if rootdom == "harford.edu0"
-replace isApp = .o  if rootdom == "harford.edu" // Nursing app 1"
-replace isApp = .o  if rootdom == "harford.edu"// International app 2"
+replace isApp = .o  if rootdom == "harford.edu1" // Nursing app 
+replace isApp = .o  if rootdom == "harford.edu2" // International app 
 replace CRIM_Inf18 = 0  if rootdom == "harford.edu0"
 replace HS_beh18   = 0  if rootdom == "harford.edu0"
 replace SEX18      = 0  if rootdom == "harford.edu0"
@@ -1960,7 +1987,7 @@ replace COL_beh18  = 0  if rootdom == "harford.edu0"
 
 
 replace isApp = 1  if rootdom == "harpercollege.edu0"
-replace isApp = .o  if rootdom == "harpercollege.edu"// Nursing certificate1"
+replace isApp = .o  if rootdom == "harpercollege.edu1" // Nursing certificate
 replace isApp = 0  if rootdom == "harpercollege.edu2"
 replace CRIM_Inf18 = 0  if rootdom == "harpercollege.edu0"
 replace HS_beh18   = 0  if rootdom == "harpercollege.edu0"
@@ -1970,7 +1997,7 @@ replace COL_beh18  = 0  if rootdom == "harpercollege.edu0"
 
 replace isApp = 1  if rootdom == "hartford.edu0"
 replace isApp = 1  if rootdom == "hartford.edu1"
-replace isApp = .o  if rootdom == "hartford.edu" // Application in english program2"
+replace isApp = .o  if rootdom == "hartford.edu2" // Application in english program
 replace CRIM_Inf18 = 0  if rootdom == "hartford.edu0"
 replace HS_beh18   = 0  if rootdom == "hartford.edu0"
 replace SEX18      = 0  if rootdom == "hartford.edu0"
@@ -1981,9 +2008,9 @@ replace SEX18      = 0  if rootdom == "hartford.edu1"
 replace COL_beh18  = 0  if rootdom == "hartford.edu1"
 
 
-replace isApp = .o  if rootdom == "hartsem.edu" // Graduate application 0"
+replace isApp = .o  if rootdom == "hartsem.edu0" // Graduate application 
 replace isApp = 1  if rootdom == "hartsem.edu1"
-replace isApp = .o  if rootdom == "hartsem.edu" // Leadership applicaiton 2"
+replace isApp = .o  if rootdom == "hartsem.edu2" // Leadership applicaiton 
 replace CRIM_Inf18 = 0  if rootdom == "hartsem.edu1"
 replace HS_beh18   = 0  if rootdom == "hartsem.edu1"
 replace SEX18      = 0  if rootdom == "hartsem.edu1"
@@ -2003,7 +2030,7 @@ replace SEX18      = 0  if rootdom == "haskell.edu1"
 replace COL_beh18  = 0  if rootdom == "haskell.edu1"
 
 
-replace isApp = .o  if rootdom == "hawkeyecollege.edu" // Occupational Therapy Program0"
+replace isApp = .o  if rootdom == "hawkeyecollege.edu0" // Occupational Therapy Program
 replace isApp = 0  if rootdom == "hawkeyecollege.edu1"
 replace isApp = 0  if rootdom == "hawkeyecollege.edu2"
 
@@ -2017,8 +2044,8 @@ replace isApp = 0  if rootdom == "hazard.kctcs.edu2"
 
 
 
-replace isApp = .o  if rootdom == "hcc-nd.edu" // Summer program application 0"
-replace isApp = .o  if rootdom == "hcc-nd.edu" // Readmission application 1"
+replace isApp = .o  if rootdom == "hcc-nd.edu0" // Summer program application 
+replace isApp = .o  if rootdom == "hcc-nd.edu1" // Readmission application 
 replace isApp = 0  if rootdom == "hcc-nd.edu2"
 
 
@@ -2030,7 +2057,7 @@ replace isApp = .e  if rootdom == "hcc.commnet.edu2"
 
 
 replace isApp = 0  if rootdom == "hccfl.edu0"
-replace isApp = .o  if rootdom == "hccfl.edu" //International application 1"
+replace isApp = .o  if rootdom == "hccfl.edu1" //International application 
 replace isApp = 0  if rootdom == "hccfl.edu2"
 
 
@@ -2043,14 +2070,14 @@ replace isApp = 0  if rootdom == "hcu.edu2"
 
 
 
-replace isApp = .o  if rootdom == "henderson.kctcs.edu" //Dental hygience program application 0"
+replace isApp = .o  if rootdom == "henderson.kctcs.edu0" //Dental hygience program application 
 replace isApp = 0  if rootdom == "henderson.kctcs.edu1"
 replace isApp = 0  if rootdom == "henderson.kctcs.edu2"
 
 
 
 
-replace isApp = .o  if rootdom == "hesston.edu"  // International student application0"
+replace isApp = .o  if rootdom == "hesston.edu0"  // International student application
 replace isApp = 1  if rootdom == "hesston.edu1"
 replace isApp = 0  if rootdom == "hesston.edu2"
 replace CRIM_Inf18 = 0  if rootdom == "hesston.edu1"
@@ -2059,7 +2086,7 @@ replace SEX18      = 0  if rootdom == "hesston.edu1"
 replace COL_beh18  = 0  if rootdom == "hesston.edu1"
 
 
-replace isApp = .o  if rootdom == "highland.edu" // International student application 0"
+replace isApp = .o  if rootdom == "highland.edu0" // International student application 
 replace isApp = 1  if rootdom == "highland.edu1"
 replace isApp = 1  if rootdom == "highland.edu2"
 replace CRIM_Inf18 = 0  if rootdom == "highland.edu1"
@@ -2073,7 +2100,7 @@ replace COL_beh18  = 0  if rootdom == "highland.edu2"
 
 
 replace isApp = 1  if rootdom == "highlandcc.edu0"
-replace isApp = .o  if rootdom == "highlandcc.edu" // Football application 1"
+replace isApp = .o  if rootdom == "highlandcc.edu1" // Football application 
 replace isApp = 0  if rootdom == "highlandcc.edu2"
 replace CRIM_Inf18 = 0  if rootdom == "highlandcc.edu0"
 replace HS_beh18   = 0  if rootdom == "highlandcc.edu0"
@@ -2082,8 +2109,8 @@ replace COL_beh18  = 0  if rootdom == "highlandcc.edu0"
 
 
 replace isApp = 1  if rootdom == "highlands.edu0"
-replace isApp = .o  if rootdom == "highlands.edu" //Nursing application 1"
-replace isApp = .o  if rootdom == "highlands.edu" //Dental hygiene program2"
+replace isApp = .o  if rootdom == "highlands.edu1" //Nursing application 
+replace isApp = .o  if rootdom == "highlands.edu2" //Dental hygiene program
 replace CRIM_Inf18 = 1  if rootdom == "highlands.edu0"
 replace HS_beh18   = 0  if rootdom == "highlands.edu0"
 replace SEX18      = 0  if rootdom == "highlands.edu0"
@@ -2092,7 +2119,7 @@ replace COL_beh18  = 0  if rootdom == "highlands.edu0"
 
 replace isApp = 0  if rootdom == "hilo.hawaii.edu0"
 replace isApp = 1  if rootdom == "hilo.hawaii.edu1"
-replace isApp = .o  if rootdom == "hilo.hawaii.edu" //Returning student application 2"
+replace isApp = .o  if rootdom == "hilo.hawaii.edu2" //Returning student application 
 replace CRIM_Inf18 = 0  if rootdom == "hilo.hawaii.edu1"
 replace HS_beh18   = 0  if rootdom == "hilo.hawaii.edu1"
 replace SEX18      = 0  if rootdom == "hilo.hawaii.edu1"
@@ -2117,29 +2144,29 @@ replace isApp = 0  if rootdom == "honolulu.hawaii.edu2"
 
 replace isApp = 0  if rootdom == "hood.edu0"
 replace isApp = 0  if rootdom == "hood.edu1"
-replace isApp = .o  if rootdom == "hood.edu" //Graduate application 2"
+replace isApp = .o  if rootdom == "hood.edu2" //Graduate application 
 
 
 
 
-replace isApp = .o  if rootdom == "hopkinsville.kctcs.edu" //I-20 application 0"
-replace isApp = .o  if rootdom == "hopkinsville.kctcs.edu" // Nursing program 1"
+replace isApp = .o  if rootdom == "hopkinsville.kctcs.edu0" //I-20 application 
+replace isApp = .o  if rootdom == "hopkinsville.kctcs.edu1" // Nursing program 
 replace isApp = 0  if rootdom == "hopkinsville.kctcs.edu2"
 
 
-replace isApp = .o  if rootdom == "howard.edu" // Application for law school0"
+replace isApp = .o  if rootdom == "howard.edu0" // Application for law school
 //Missing rootdom1"
 //Missing rootdom2"
 
 
 
 
-replace isApp = .o  if rootdom == "howardcc.edu"//Accelerated program for HS students0"
-replace isApp = .o  if rootdom == "howardcc.edu" // Honors addmission 1"
+replace isApp = .o  if rootdom == "howardcc.edu0" //Accelerated program for HS students
+replace isApp = .o  if rootdom == "howardcc.edu1" // Honors addmission 
 replace isApp = 0  if rootdom == "howardcc.edu2"
 
 
-replace isApp = .o  if rootdom == "hpu.edu" //Application for non-degree 0"
+replace isApp = .o  if rootdom == "hpu.edu0" //Application for non-degree 
 replace isApp = 0  if rootdom == "hpu.edu1"
 replace isApp = 0  if rootdom == "hpu.edu2"
 
@@ -2164,14 +2191,14 @@ replace isApp = 0  if rootdom == "huntingdon.edu1"
 replace isApp = .e  if rootdom == "huntingdon.edu2"
 
 
-replace isApp = .o  if rootdom == "huntington.edu" //HS students early entry0"
-replace isApp = .o  if rootdom == "huntington.edu" // Specific ABLE Program application 1"
+replace isApp = .o  if rootdom == "huntington.edu0" //HS students early entry
+replace isApp = .o  if rootdom == "huntington.edu1" // Specific ABLE Program application 
 replace isApp = 0  if rootdom == "huntington.edu2"
 
 
-replace isApp = .o  if rootdom == "hutchcc.edu" //Nursing application 0"
-replace isApp = .o  if rootdom == "hutchcc.edu" // Nursing applicaiton 1"
-replace isApp = 0  if rootdom == "hutchcc.edu" 2"
+replace isApp = .o  if rootdom == "hutchcc.edu0" //Nursing application 
+replace isApp = .o  if rootdom == "hutchcc.edu1" // Nursing applicaiton 
+replace isApp = 0  if rootdom == "hutchcc.edu2" 
 
 
 replace isApp = 1  if rootdom == "iastate.edu0"
@@ -2190,7 +2217,7 @@ replace isApp = 0  if rootdom == "ic.edu2"
 
 
 
-replace isApp = .o  if rootdom == "icc.edu" // Veterans application0"
+replace isApp = .o  if rootdom == "icc.edu0" // Veterans application
 replace isApp = 0  if rootdom == "icc.edu1"
 replace isApp = 0  if rootdom == "icc.edu2"
 
@@ -2204,10 +2231,9 @@ replace isApp = 0  if rootdom == "icsw.edu2"
 
 
 
-replace isApp = .o  if rootdom == "iit.edu" //Crown Scholars application 0"
+replace isApp = .o  if rootdom == "iit.edu0" //Crown Scholars application 
 replace isApp = 0  if rootdom == "iit.edu1"
 replace isApp = 0  if rootdom == "iit.edu2"
-
 
 
 
@@ -2216,13 +2242,9 @@ replace isApp = 0  if rootdom == "iliff.edu1"
 replace isApp = .e  if rootdom == "iliff.edu2"
 
 
-replace isApp = .n  if rootdom == "illinois.edu" //College prep academy?0"
-replace isApp = .o  if rootdom == "template.edu1"
-replace isApp = .o  if rootdom == "template.edu2"
-replace CRIM_Inf18 = __  if rootdom == "template.edu0"
-replace HS_beh18   = __  if rootdom == "template.edu0"
-replace SEX18      = __  if rootdom == "template.edu0"
-replace COL_beh18  = __  if rootdom == "template.edu0"
+replace isApp = .o  if rootdom == "illinois.edu0" 
+replace isApp = 0  if rootdom == "illinois.edu1"
+replace isApp = 0  if rootdom == "illinois.edu2"
 
 
 replace isApp = 1  if rootdom == "illinoisstate.edu0"
@@ -2234,8 +2256,8 @@ replace SEX18      = 0  if rootdom == "illinoisstate.edu0"
 replace COL_beh18  = 1  if rootdom == "illinoisstate.edu0"
 
 
-replace isApp = .o  if rootdom == "indianatech.edu" //Graduate application 0"
-replace isApp = .o  if rootdom == "indianatech.edu" //International application 1"
+replace isApp = .o  if rootdom == "indianatech.edu0" //Graduate application 
+replace isApp = .o  if rootdom == "indianatech.edu1" //International application 
 replace isApp = 1  if rootdom == "indianatech.edu2"
 replace CRIM_Inf18 = 0  if rootdom == "indianatech.edu2"
 replace HS_beh18   = 1  if rootdom == "indianatech.edu2"
@@ -2243,14 +2265,15 @@ replace SEX18      = 0  if rootdom == "indianatech.edu2"
 replace COL_beh18  = 1  if rootdom == "indianatech.edu2"
 
 
+/*
 replace isApp = 0  if rootdom == "indianhills.edu0"
-replace isApp = .o  if rootdom == "indianhills.edu" //Transfer application 1"
-replace isApp = .n  if rootdom == "indianhills.edu2"
+replace isApp = .o  if rootdom == "indianhills.edu1" //Transfer application 
+replace isApp = .o  if rootdom == "indianhills.edu2" // International student application 
 replace CRIM_Inf18 = __  if rootdom == "indianhills.edu0"
 replace HS_beh18   = __  if rootdom == "indianhills.edu0"
 replace SEX18      = __  if rootdom == "indianhills.edu0"
 replace COL_beh18  = __  if rootdom == "indianhills.edu0"
-
+*/
 
 replace isApp = 0  if rootdom == "indstate.edu0"
 replace isApp = 0  if rootdom == "indstate.edu1"
@@ -2259,8 +2282,8 @@ replace isApp = 0  if rootdom == "indstate.edu2"
 
 
 
-replace isApp = .o  if rootdom == "indwes.edu" //scholars program application 0"
-replace isApp = .o  if rootdom == "indwes.edu" //re-enrollment application 1"
+replace isApp = .o  if rootdom == "indwes.edu0" //scholars program application 
+replace isApp = .o  if rootdom == "indwes.edu1" //re-enrollment application 
 replace isApp = 0  if rootdom == "indwes.edu2"
 
 
@@ -2272,8 +2295,8 @@ replace isApp = 0  if rootdom == "indycc.edu2"
 
 
 replace isApp = 0  if rootdom == "iowacentral.edu0"
-replace isApp = .o  if rootdom == "iowacentral.edu" //Lab tech application 1"
-replace isApp = .o  if rootdom == "iowacentral.edu" //Dental hygiene application 2"
+replace isApp = .o  if rootdom == "iowacentral.edu1" //Lab tech application 
+replace isApp = .o  if rootdom == "iowacentral.edu2" //Dental hygiene application 
 
 
 
@@ -2287,12 +2310,12 @@ replace isApp = 0  if rootdom == "iowalakes.edu2"
 
 replace isApp = 0  if rootdom == "ipfw.edu0"
 replace isApp = 0  if rootdom == "ipfw.edu1"
-replace isApp = .o  if rootdom == "ipfw.edu" //MBA application 2"
+replace isApp = .o  if rootdom == "ipfw.edu2" //MBA application 
 
 
 
 
-replace isApp = .o  if rootdom == "irsc.edu" //International student application 0"
+replace isApp = .o  if rootdom == "irsc.edu0" //International student application 
 replace isApp = 1  if rootdom == "irsc.edu1"
 //Missing rootdom2"
 replace CRIM_Inf18 = 0  if rootdom == "irsc.edu0"
@@ -2308,9 +2331,9 @@ replace isApp = 0  if rootdom == "istc.edu2"
 
 
 
-replace isApp = .o  if rootdom == "isu.edu" //International student application 0"
-replace isApp = .o  if rootdom == "isu.edu" //Nursing application 1"
-replace isApp = .o  if rootdom == "isu.edu" //Social work application 2"
+replace isApp = .o  if rootdom == "isu.edu0" //International student application 
+replace isApp = .o  if rootdom == "isu.edu1" //Nursing application 
+replace isApp = .o  if rootdom == "isu.edu2" //Social work application 
 
 
 
@@ -2328,8 +2351,8 @@ replace isApp = 0  if rootdom == "iub.edu2"
 
 
 replace isApp = 1  if rootdom == "iue.edu0"
-replace isApp = .o  if rootdom == "iue.edu1" //Pathways application 1"
-replace isApp = .o  if rootdom == "iue.edu2" //Nursing application 2"
+replace isApp = .o  if rootdom == "iue.edu1" //Pathways application 
+replace isApp = .o  if rootdom == "iue.edu2" //Nursing application 
 replace CRIM_Inf18 = 1  if rootdom == "iue.edu0"
 replace HS_beh18   = 1  if rootdom == "iue.edu0"
 replace SEX18      = 0  if rootdom == "iue.edu0"
@@ -2337,17 +2360,17 @@ replace COL_beh18  = 1  if rootdom == "iue.edu0"
 
 
 replace isApp = 1  if rootdom == "iuk.edu0"
-replace isApp = .o  if rootdom == "iuk.edu1" //Graduate certificate1"
-replace isApp = .o  if rootdom == "iuk.edu2" //International application 2"
+replace isApp = .o  if rootdom == "iuk.edu1" //Graduate certificate
+replace isApp = .o  if rootdom == "iuk.edu2" //International application 
 replace CRIM_Inf18 = 1  if rootdom == "iuk.edu0"
 replace HS_beh18   = 1  if rootdom == "iuk.edu0"
 replace SEX18      = 0  if rootdom == "iuk.edu0"
 replace COL_beh18  = 1  if rootdom == "iuk.edu0"
 
 
-replace isApp = .o  if rootdom == "iun.edu" //International graduate application 0"
-replace isApp = .o  if rootdom == "iun.edu"  //Graduate application 1"
-replace isApp = .o  if rootdom == "iun.edu"  // Graduate application 2"
+replace isApp = .o  if rootdom == "iun.edu0" //International graduate application 
+replace isApp = .o  if rootdom == "iun.edu1"  //Graduate application 
+replace isApp = .o  if rootdom == "iun.edu2"  // Graduate application 
 
 
 
@@ -2360,7 +2383,7 @@ replace isApp = 0  if rootdom == "iupui.edu1"
 
 
 replace isApp = 1  if rootdom == "ius.edu0"
-replace isApp = .o  if rootdom == "ius.edu" //International application 1"
+replace isApp = .o  if rootdom == "ius.edu1" //International application 
 replace isApp = 0  if rootdom == "ius.edu2"
 replace CRIM_Inf18 = 1  if rootdom == "ius.edu0"
 replace HS_beh18   = 1  if rootdom == "ius.edu0"
@@ -2368,15 +2391,15 @@ replace SEX18      = 0  if rootdom == "ius.edu0"
 replace COL_beh18  = 1  if rootdom == "ius.edu0"
 
 
-replace isApp = .o  if rootdom == "iusb.edu" //Dental hygiene application 0"
-replace isApp = .o  if rootdom == "iusb.edu" //Nursing application 1"
+replace isApp = .o  if rootdom == "iusb.edu0" //Dental hygiene application 
+replace isApp = .o  if rootdom == "iusb.edu1" //Nursing application 
 replace isApp = .e  if rootdom == "iusb.edu2"
 
 
 
 
 replace isApp = 0  if rootdom == "ivcc.edu0"
-replace isApp = .o  if rootdom == "ivcc.edu" //Certificate program application 1"
+replace isApp = .o  if rootdom == "ivcc.edu1" //Certificate program application 
 replace isApp = 0  if rootdom == "ivcc.edu2"
 
 
@@ -2391,19 +2414,19 @@ replace COL_beh18  = 0  if rootdom == "ivytech.edu0"
 
 replace isApp = 0  if rootdom == "iw.edu0"
 replace isApp = 0  if rootdom == "iw.edu1"
-replace isApp = .o  if rootdom == "iw.edu"// International transfer application 2"
+replace isApp = .o  if rootdom == "iw.edu2" // International transfer application 
 
 
 
 
-replace isApp = .o  if rootdom == "iwcc.edu" // Scholarship application 0"
+replace isApp = .o  if rootdom == "iwcc.edu0" // Scholarship application 
 replace isApp = 0  if rootdom == "iwcc.edu1"
 replace isApp = 0  if rootdom == "iwcc.edu2"
 
 
 replace isApp = 1  if rootdom == "iwu.edu0"
 replace isApp = 1  if rootdom == "iwu.edu1"
-replace isApp = .o  if rootdom == "iwu.edu" //International studet application 2"
+replace isApp = .o  if rootdom == "iwu.edu2" //International studet application 
 replace CRIM_Inf18 = 1  if rootdom == "iwu.edu0"
 replace HS_beh18   = 1  if rootdom == "iwu.edu0"
 replace SEX18      = 0  if rootdom == "iwu.edu0"
